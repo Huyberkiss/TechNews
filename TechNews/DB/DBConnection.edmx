@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TechNewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="aID" />
+          </Key>
+          <Property Name="aID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aUsername" Type="varchar" MaxLength="50" />
+          <Property Name="aPassword" Type="varchar" MaxLength="32" />
+          <Property Name="aFullname" Type="varchar" MaxLength="100" />
+          <Property Name="aBirthday" Type="date" />
+          <Property Name="aGender" Type="int" />
+          <Property Name="aPhone" Type="int" />
+          <Property Name="aEmail" Type="varchar" MaxLength="100" />
+          <Property Name="aAddress" Type="varchar" MaxLength="125" />
+          <Property Name="aStatus" Type="int" />
+          <Property Name="aDateAdded" Type="date" />
+          <Property Name="roleID" Type="int" />
+          <Property Name="countryID" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="cateID" />
+          </Key>
+          <Property Name="cateID" Type="int" Nullable="false" />
+          <Property Name="cateName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="commentID" />
+          </Key>
+          <Property Name="commentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="commentContent" Type="ntext" />
+          <Property Name="aID" Type="int" />
+          <Property Name="postID" Type="int" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="countryID" />
+          </Key>
+          <Property Name="countryID" Type="int" Nullable="false" />
+          <Property Name="countryName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="hID" />
+          </Key>
+          <Property Name="hID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateSubmited" Type="date" />
+          <Property Name="dateAccepted" Type="date" />
+          <Property Name="typeAccept" Type="int" />
+          <Property Name="censorID" Type="int" />
+          <Property Name="posterID" Type="int" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="pictureID" />
+          </Key>
+          <Property Name="pictureID" Type="int" Nullable="false" />
+          <Property Name="urlPicture" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="postID" Type="int" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="postTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="postContent" Type="ntext" Nullable="false" />
+          <Property Name="postStatus" Type="int" Nullable="false" />
+          <Property Name="cateID" Type="int" Nullable="false" />
+          <Property Name="hID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="roleID" />
+          </Key>
+          <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roleName" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityContainer Name="TechNewsModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TechNewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="aID" />
+          </Key>
+          <Property Name="aID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="aFullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aBirthday" Type="DateTime" Precision="0" />
+          <Property Name="aGender" Type="Int32" />
+          <Property Name="aPhone" Type="Int32" />
+          <Property Name="aEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aAddress" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="aStatus" Type="Int32" />
+          <Property Name="aDateAdded" Type="DateTime" Precision="0" />
+          <Property Name="roleID" Type="Int32" />
+          <Property Name="countryID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="cateID" />
+          </Key>
+          <Property Name="cateID" Type="Int32" Nullable="false" />
+          <Property Name="cateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="commentID" />
+          </Key>
+          <Property Name="commentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="commentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aID" Type="Int32" />
+          <Property Name="postID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="countryID" />
+          </Key>
+          <Property Name="countryID" Type="Int32" Nullable="false" />
+          <Property Name="countryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="hID" />
+          </Key>
+          <Property Name="hID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateSubmited" Type="DateTime" Precision="0" />
+          <Property Name="dateAccepted" Type="DateTime" Precision="0" />
+          <Property Name="typeAccept" Type="Int32" />
+          <Property Name="censorID" Type="Int32" />
+          <Property Name="posterID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="pictureID" />
+          </Key>
+          <Property Name="pictureID" Type="Int32" Nullable="false" />
+          <Property Name="urlPicture" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="postID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="postTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="postContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="postStatus" Type="Int32" Nullable="false" />
+          <Property Name="cateID" Type="Int32" Nullable="false" />
+          <Property Name="hID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="roleID" />
+          </Key>
+          <Property Name="roleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TechNewsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Histories" EntityType="Self.History" />
+          <EntitySet Name="Pictures" EntityType="Self.Picture" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TechNewsModelStoreContainer" CdmEntityContainer="TechNewsEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="TechNewsModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="aID" ColumnName="aID" />
+                <ScalarProperty Name="aUsername" ColumnName="aUsername" />
+                <ScalarProperty Name="aPassword" ColumnName="aPassword" />
+                <ScalarProperty Name="aFullname" ColumnName="aFullname" />
+                <ScalarProperty Name="aBirthday" ColumnName="aBirthday" />
+                <ScalarProperty Name="aGender" ColumnName="aGender" />
+                <ScalarProperty Name="aPhone" ColumnName="aPhone" />
+                <ScalarProperty Name="aEmail" ColumnName="aEmail" />
+                <ScalarProperty Name="aAddress" ColumnName="aAddress" />
+                <ScalarProperty Name="aStatus" ColumnName="aStatus" />
+                <ScalarProperty Name="aDateAdded" ColumnName="aDateAdded" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="TechNewsModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="cateID" ColumnName="cateID" />
+                <ScalarProperty Name="cateName" ColumnName="cateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="TechNewsModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="commentID" ColumnName="commentID" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+                <ScalarProperty Name="aID" ColumnName="aID" />
+                <ScalarProperty Name="postID" ColumnName="postID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="TechNewsModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+                <ScalarProperty Name="countryName" ColumnName="countryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Histories">
+            <EntityTypeMapping TypeName="TechNewsModel.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="hID" ColumnName="hID" />
+                <ScalarProperty Name="dateSubmited" ColumnName="dateSubmited" />
+                <ScalarProperty Name="dateAccepted" ColumnName="dateAccepted" />
+                <ScalarProperty Name="typeAccept" ColumnName="typeAccept" />
+                <ScalarProperty Name="censorID" ColumnName="censorID" />
+                <ScalarProperty Name="posterID" ColumnName="posterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="TechNewsModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="pictureID" ColumnName="pictureID" />
+                <ScalarProperty Name="urlPicture" ColumnName="urlPicture" />
+                <ScalarProperty Name="postID" ColumnName="postID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="TechNewsModel.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="postID" ColumnName="postID" />
+                <ScalarProperty Name="postTitle" ColumnName="postTitle" />
+                <ScalarProperty Name="postContent" ColumnName="postContent" />
+                <ScalarProperty Name="postStatus" ColumnName="postStatus" />
+                <ScalarProperty Name="cateID" ColumnName="cateID" />
+                <ScalarProperty Name="hID" ColumnName="hID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TechNewsModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

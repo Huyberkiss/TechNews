@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TechNews.DB;
 
 namespace TechNews.Controllers {
     public class HomeController : Controller {
@@ -12,7 +14,8 @@ namespace TechNews.Controllers {
 
         public ActionResult About() {
             ViewBag.Message = "Your application description page.";
-
+            
+           
             return View();
         }
 

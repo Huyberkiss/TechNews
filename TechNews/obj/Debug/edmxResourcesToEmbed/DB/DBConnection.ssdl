@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TechNewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="aID" />
+    </Key>
+    <Property Name="aID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aUsername" Type="varchar" MaxLength="50" />
+    <Property Name="aPassword" Type="varchar" MaxLength="32" />
+    <Property Name="aFullname" Type="varchar" MaxLength="100" />
+    <Property Name="aBirthday" Type="date" />
+    <Property Name="aGender" Type="int" />
+    <Property Name="aPhone" Type="int" />
+    <Property Name="aEmail" Type="varchar" MaxLength="100" />
+    <Property Name="aAddress" Type="varchar" MaxLength="125" />
+    <Property Name="aStatus" Type="int" />
+    <Property Name="aDateAdded" Type="date" />
+    <Property Name="roleID" Type="int" />
+    <Property Name="countryID" Type="int" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="cateID" />
+    </Key>
+    <Property Name="cateID" Type="int" Nullable="false" />
+    <Property Name="cateName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="commentID" />
+    </Key>
+    <Property Name="commentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="commentContent" Type="ntext" />
+    <Property Name="aID" Type="int" />
+    <Property Name="postID" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="countryID" />
+    </Key>
+    <Property Name="countryID" Type="int" Nullable="false" />
+    <Property Name="countryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="hID" />
+    </Key>
+    <Property Name="hID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateSubmited" Type="date" />
+    <Property Name="dateAccepted" Type="date" />
+    <Property Name="typeAccept" Type="int" />
+    <Property Name="censorID" Type="int" />
+    <Property Name="posterID" Type="int" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="pictureID" />
+    </Key>
+    <Property Name="pictureID" Type="int" Nullable="false" />
+    <Property Name="urlPicture" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="postID" Type="int" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="postID" />
+    </Key>
+    <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="postTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="postContent" Type="ntext" Nullable="false" />
+    <Property Name="postStatus" Type="int" Nullable="false" />
+    <Property Name="cateID" Type="int" Nullable="false" />
+    <Property Name="hID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleName" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="TechNewsModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
