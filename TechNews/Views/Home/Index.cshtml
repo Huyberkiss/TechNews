@@ -33,9 +33,12 @@
         margin: 0 auto;
         display: block;
     }
-
-    .section {
+    
+    .section:nth-child(odd) {
         background-color: #eef;
+    }
+    .section:nth-child(even) {
+        background-color: #fff;
     }
 
     .section-title {
@@ -47,6 +50,10 @@
         font-size: 14px;
     }
 
+    .main{
+        width:88%;
+    }
+
     .comment {
         font-size: 12px;
     }
@@ -55,8 +62,39 @@
 
 @Html.Partial("~/Views/Shared/SubViews/_HomeIntro.cshtml")
 
-<div class="container main">
+<div class="container-fluid main">
     <div class="section p-5 m-5">
+        <div class="section-title mb-5">
+            <h5>C# .NET</h5>
+        </div>
+        <div class="row">
+            <div class="col-4">
+
+            </div>
+            <div class="col-4">
+                <div class="title">
+                    <div class="h6">ABCDEZ</div>
+                </div>
+                <div class="paragraph text-left pb-4">
+                    Create a blog post subtitle that summarizes your post in a few short,
+                    punchy sentences and entices your audience to continue reading. Wel...
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between">
+                    <div class="comment">
+                        <div class="p">Write a comment</div>
+                    </div>
+                    <div class="react">
+                        <i class="far fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+    <div class="bg-transparent section p-5 m-5">
         <div class="section-title mb-5">
             <h5>C# .NET</h5>
         </div>
