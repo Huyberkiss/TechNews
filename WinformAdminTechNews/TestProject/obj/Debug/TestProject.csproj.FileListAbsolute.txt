@@ -70,3 +70,15 @@ D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master
 D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master\TestProject\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
 D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master\TestProject\obj\Debug\TestProject.exe.licenses
 D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master\TestProject\obj\Debug\TestProject.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe.config
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.pdb
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.frmLogin.resources
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.Form_Dashboard.resources
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe.licenses
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.pdb
