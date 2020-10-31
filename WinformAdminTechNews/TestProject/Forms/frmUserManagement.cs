@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestProject.DB;
 
 namespace TestProject.Forms
 {
@@ -15,6 +16,14 @@ namespace TestProject.Forms
         public frmUserManagement()
         {
             InitializeComponent();
+            show();
+        }
+
+        public void show()
+        {
+            TechNewsEntities db = new TechNewsEntities();
+            var data = (from d in db.Accounts select d);
+            dtTable.DataSource = data.ToList();
         }
     }
 }
