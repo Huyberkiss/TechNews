@@ -3854,12 +3854,6 @@ This member is supported by individual descendant of the <see cref="T:DevExpress
       </summary>
       <param name="path">A <see cref="T:System.String"/> value that specifies the registry path from which to restore the video settings.</param>
     </member>
-    <member name="M:DevExpress.XtraEditors.Camera.CameraControl.RestoreSettingsFromStream(System.IO.Stream)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="stream"></param>
-    </member>
     <member name="M:DevExpress.XtraEditors.Camera.CameraControl.RestoreSettingsFromXml(System.String)">
       <summary>
         <para>Loads the video settings stored in the specified XML file.</para>
@@ -3872,12 +3866,6 @@ This member is supported by individual descendant of the <see cref="T:DevExpress
       </summary>
       <param name="path">A <see cref="T:System.String"/> value specifying the system registry path to which the video settings are saved.</param>
       <returns>true, if the operation is successfully completed; otherwise, false.</returns>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Camera.CameraControl.SaveSettingsToStream(System.IO.Stream)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="stream"></param>
     </member>
     <member name="M:DevExpress.XtraEditors.Camera.CameraControl.SaveSettingsToXml(System.String)">
       <summary>
@@ -3965,129 +3953,6 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>For internal use.</para>
       </summary>
       <param name="provider"></param>
-    </member>
-    <member name="T:DevExpress.XtraEditors.Camera.ResolutionMode">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.Camera.ResolutionMode.Default">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.Camera.ResolutionMode.LastUsed">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.Camera.ResolutionMode.Manual">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.Camera.ResolutionMode.Maximum">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.XtraEditors.Camera.TakePictureDialog">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Camera.TakePictureDialog.#ctor">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.Camera.TakePictureDialog"/> class.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialog.Caption">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="E:DevExpress.XtraEditors.Camera.TakePictureDialog.Closed">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialog.Device">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialog.Image">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialog.ManualResolution">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialog.ResolutionMode">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Camera.TakePictureDialog.ShowDialog">
-      <summary>
-        <para></para>
-      </summary>
-      <returns></returns>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Camera.TakePictureDialog.ShowDialog(System.String)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="caption"></param>
-      <returns></returns>
-    </member>
-    <member name="E:DevExpress.XtraEditors.Camera.TakePictureDialog.Showing">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs.#ctor(DevExpress.XtraEditors.Camera.TakePictureForm)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs"/> class with specified settings.</para>
-      </summary>
-      <param name="form"></param>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs.Device">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs.Form">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs.ManualResolution">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Camera.TakePictureDialogShowingEventArgs.ResolutionMode">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraEditors.Camera.VideoStretchMode">
       <summary>
@@ -9273,21 +9138,6 @@ A specific version of the addressed image is automatically chosen based on the a
       <param name="sender">The event source.</param>
       <param name="e">A <see cref="T:DevExpress.XtraEditors.Controls.OpenLinkEventArgs"/> object  that contains event data.</param>
     </member>
-    <member name="T:DevExpress.XtraEditors.Controls.OutputImageFormat">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.Controls.OutputImageFormat.Default">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.Controls.OutputImageFormat.Original">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="T:DevExpress.XtraEditors.Controls.PickImageItem">
       <summary>
         <para>Represents an individual item within an image combo box editor.</para>
@@ -9433,34 +9283,6 @@ A specific version of the addressed image is automatically chosen based on the a
     <member name="F:DevExpress.XtraEditors.Controls.PictureEditMaskType.RoundedRect">
       <summary>
         <para>A rounded rectangle mask.Use the <see cref="P:DevExpress.XtraEditors.Controls.PictureEditOptionsMask.RectCornerRadius"/> property to specify the radius of rounded corners.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.XtraEditors.Controls.PictureEditOptionsEditDialog">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Controls.PictureEditOptionsEditDialog.#ctor(DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.Controls.PictureEditOptionsEditDialog"/> class with specified settings.</para>
-      </summary>
-      <param name="owner"></param>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Controls.PictureEditOptionsEditDialog.Assign(DevExpress.Utils.Controls.BaseOptions)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="options"></param>
-    </member>
-    <member name="P:DevExpress.XtraEditors.Controls.PictureEditOptionsEditDialog.OutputImageFormat">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="M:DevExpress.XtraEditors.Controls.PictureEditOptionsEditDialog.Reset">
-      <summary>
-        <para></para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraEditors.Controls.PictureEditOptionsMask">
@@ -13794,22 +13616,22 @@ A specific version of the addressed image is automatically chosen based on the a
     </member>
     <member name="F:DevExpress.XtraEditors.Controls.WeekNumberRule.Default">
       <summary>
-        <para>The rule specified by the System.Globalization.DateTimeFormatInfo.CalendarWeekRule property which defines a calendar week for a specific culture.</para>
+        <para>The rule specified by the System.Globalization.DateTimeFormatInfo.CalendarWeekRule property which defines a calendar week for a specific culture. The value is -1.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraEditors.Controls.WeekNumberRule.FirstDay">
       <summary>
-        <para>Indicates that the first week of the year starts on the first day of the year and ends before the following designated first day of the week.</para>
+        <para>Indicates that the first week of the year starts on the first day of the year and ends before the following designated first day of the week. The value is 0.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraEditors.Controls.WeekNumberRule.FirstFourDayWeek">
       <summary>
-        <para>Indicates that the first week of the year is the first week with four or more days before the designated first day of the week.</para>
+        <para>Indicates that the first week of the year begins on the first occurrence of the designated first day of the week on or after the first day of the year. The value is 1.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraEditors.Controls.WeekNumberRule.FirstFullWeek">
       <summary>
-        <para>Indicates that the first week of the year begins on the first occurrence of the designated first day of the week on or after the first day of the year.</para>
+        <para>Indicates that the first week of the year is the first week with four or more days before the designated first day of the week. The value is 2.</para>
       </summary>
     </member>
     <member name="N:DevExpress.XtraEditors.CustomEditor">
@@ -17573,6 +17395,12 @@ In <see cref="F:DevExpress.XtraEditors.HotTrackSelectMode.SelectItemOnHotTrack"/
       <summary>
         <para>Performs default painting of an element.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.ListBoxDrawItemEventArgs.GetItemInfo">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <returns></returns>
     </member>
     <member name="P:DevExpress.XtraEditors.ListBoxDrawItemEventArgs.Graphics">
       <summary>

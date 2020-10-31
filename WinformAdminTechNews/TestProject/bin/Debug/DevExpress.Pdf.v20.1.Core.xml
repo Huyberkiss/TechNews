@@ -4943,12 +4943,6 @@
       </summary>
       <value>A <see cref="T:System.Double"/> value.</value>
     </member>
-    <member name="M:DevExpress.Pdf.PdfPage.GetPageIndex">
-      <summary>
-        <para></para>
-      </summary>
-      <returns></returns>
-    </member>
     <member name="P:DevExpress.Pdf.PdfPage.ID">
       <summary>
         <para>Indicates the digital identifier of the page&#39;s parent Web Capture content set.</para>
@@ -6388,12 +6382,6 @@
       </summary>
       <param name="fileName">A path to the image file.</param>
     </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureBuilder.SigningTime">
-      <summary>
-        <para>Specifies the date and time when the signature is applied.</para>
-      </summary>
-      <value>The date and time when the signature is applied.</value>
-    </member>
     <member name="T:DevExpress.Pdf.PdfSignatureFieldInfo">
       <summary>
         <para>Contains information about the signature field.</para>
@@ -6454,65 +6442,6 @@
       <summary>
         <para>The document contains at least one signature field.</para>
       </summary>
-    </member>
-    <member name="T:DevExpress.Pdf.PdfSignatureInfo">
-      <summary>
-        <para>Contains signature information.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.CertificationLevel">
-      <summary>
-        <para>Gets the signature&#39;s certification level.</para>
-      </summary>
-      <value>An enumeration value that indicates the certification level.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.ContactInfo">
-      <summary>
-        <para>Gets the signer&#39;s contact information.</para>
-      </summary>
-      <value>A contact information.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.FieldName">
-      <summary>
-        <para>Gets the name of a signature form field.</para>
-      </summary>
-      <value>The form field&#39;s name.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.Filter">
-      <summary>
-        <para>Retrieves the name of the preferred signature handler.</para>
-      </summary>
-      <value>Preferred signature handler&#39;s name.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.Location">
-      <summary>
-        <para>Gets the place where the signature was applied (for example, the company address).</para>
-      </summary>
-      <value>The location associated with the signer&#39;s identity.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.Reason">
-      <summary>
-        <para>Gets the reason to apply a signature.</para>
-      </summary>
-      <value>A reason for a signature (for example, &quot;I Agree&quot;).</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.SignerName">
-      <summary>
-        <para>Gets a signer&#39;s name.</para>
-      </summary>
-      <value>A signer&#39;s name.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.SigningTime">
-      <summary>
-        <para>Gets the date and time when the signature is applied.</para>
-      </summary>
-      <value>The date and time when the signature is applied.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfSignatureInfo.SubFilter">
-      <summary>
-        <para>Gets information about the signature&#39;s format.</para>
-      </summary>
-      <value>The signature&#39;s encoding and key information.</value>
     </member>
     <member name="T:DevExpress.Pdf.PdfSignatureProfile">
       <summary>
