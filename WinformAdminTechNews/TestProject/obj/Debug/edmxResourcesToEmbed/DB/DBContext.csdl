@@ -17,6 +17,11 @@
     <Property Name="aDateAdded" Type="DateTime" Precision="0" />
     <Property Name="roleID" Type="Int32" />
     <Property Name="countryID" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="TechNewsModel.FK__Account__country__398D8EEE" FromRole="Account" ToRole="Country" />
+    <NavigationProperty Name="Role" Relationship="TechNewsModel.FK__Account__roleID__38996AB5" FromRole="Account" ToRole="Role" />
+    <NavigationProperty Name="Comments" Relationship="TechNewsModel.FK__Comment__aID__3D5E1FD2" FromRole="Account" ToRole="Comment" />
+    <NavigationProperty Name="Account1" Relationship="TechNewsModel.FK_Account_Account" FromRole="Account" ToRole="Account1" />
+    <NavigationProperty Name="Account2" Relationship="TechNewsModel.FK_Account_Account" FromRole="Account1" ToRole="Account" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -24,6 +29,7 @@
     </Key>
     <Property Name="cateID" Type="Int32" Nullable="false" />
     <Property Name="cateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="TechNewsModel.FK__Post__cateID__33D4B598" FromRole="Category" ToRole="Post" />
   </EntityType>
   <EntityType Name="Comment">
     <Key>
@@ -33,6 +39,8 @@
     <Property Name="commentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="aID" Type="Int32" />
     <Property Name="postID" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="TechNewsModel.FK__Comment__aID__3D5E1FD2" FromRole="Comment" ToRole="Account" />
+    <NavigationProperty Name="Post" Relationship="TechNewsModel.FK__Comment__postID__3E52440B" FromRole="Comment" ToRole="Post" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -40,6 +48,7 @@
     </Key>
     <Property Name="countryID" Type="Int32" Nullable="false" />
     <Property Name="countryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="TechNewsModel.FK__Account__country__398D8EEE" FromRole="Country" ToRole="Account" />
   </EntityType>
   <EntityType Name="History">
     <Key>
@@ -51,6 +60,7 @@
     <Property Name="typeAccept" Type="Int32" />
     <Property Name="censorID" Type="Int32" />
     <Property Name="posterID" Type="Int32" />
+    <NavigationProperty Name="Posts" Relationship="TechNewsModel.FK__Post__hID__32E0915F" FromRole="History" ToRole="Post" />
   </EntityType>
   <EntityType Name="Picture">
     <Key>
@@ -59,6 +69,7 @@
     <Property Name="pictureID" Type="Int32" Nullable="false" />
     <Property Name="urlPicture" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="postID" Type="Int32" />
+    <NavigationProperty Name="Post" Relationship="TechNewsModel.FK__Picture__postID__4316F928" FromRole="Picture" ToRole="Post" />
   </EntityType>
   <EntityType Name="Post">
     <Key>
@@ -70,6 +81,10 @@
     <Property Name="postStatus" Type="Int32" Nullable="false" />
     <Property Name="cateID" Type="Int32" Nullable="false" />
     <Property Name="hID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="TechNewsModel.FK__Post__cateID__33D4B598" FromRole="Post" ToRole="Category" />
+    <NavigationProperty Name="Comments" Relationship="TechNewsModel.FK__Comment__postID__3E52440B" FromRole="Post" ToRole="Comment" />
+    <NavigationProperty Name="History" Relationship="TechNewsModel.FK__Post__hID__32E0915F" FromRole="Post" ToRole="History" />
+    <NavigationProperty Name="Pictures" Relationship="TechNewsModel.FK__Picture__postID__4316F928" FromRole="Post" ToRole="Picture" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -77,6 +92,7 @@
     </Key>
     <Property Name="roleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="roleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Accounts" Relationship="TechNewsModel.FK__Account__roleID__38996AB5" FromRole="Role" ToRole="Account" />
   </EntityType>
   <EntityContainer Name="TechNewsEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
@@ -87,5 +103,133 @@
     <EntitySet Name="Pictures" EntityType="Self.Picture" />
     <EntitySet Name="Posts" EntityType="Self.Post" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
+    <AssociationSet Name="FK__Account__country__398D8EEE" Association="TechNewsModel.FK__Account__country__398D8EEE">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Account__roleID__38996AB5" Association="TechNewsModel.FK__Account__roleID__38996AB5">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__aID__3D5E1FD2" Association="TechNewsModel.FK__Comment__aID__3D5E1FD2">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Account" Association="TechNewsModel.FK_Account_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Account1" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Post__cateID__33D4B598" Association="TechNewsModel.FK__Post__cateID__33D4B598">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__postID__3E52440B" Association="TechNewsModel.FK__Comment__postID__3E52440B">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Post__hID__32E0915F" Association="TechNewsModel.FK__Post__hID__32E0915F">
+      <End Role="History" EntitySet="Histories" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Picture__postID__4316F928" Association="TechNewsModel.FK__Picture__postID__4316F928">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Picture" EntitySet="Pictures" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__Account__country__398D8EEE">
+    <End Type="TechNewsModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="TechNewsModel.Account" Role="Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="countryID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="countryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Account__roleID__38996AB5">
+    <End Type="TechNewsModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="TechNewsModel.Account" Role="Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__aID__3D5E1FD2">
+    <End Type="TechNewsModel.Account" Role="Account" Multiplicity="0..1" />
+    <End Type="TechNewsModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="aID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="aID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Account">
+    <End Type="TechNewsModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="TechNewsModel.Account" Role="Account1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="aID" />
+      </Principal>
+      <Dependent Role="Account1">
+        <PropertyRef Name="aID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Post__cateID__33D4B598">
+    <End Type="TechNewsModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="TechNewsModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="cateID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="cateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__postID__3E52440B">
+    <End Type="TechNewsModel.Post" Role="Post" Multiplicity="0..1" />
+    <End Type="TechNewsModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="postID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="postID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Post__hID__32E0915F">
+    <End Type="TechNewsModel.History" Role="History" Multiplicity="1" />
+    <End Type="TechNewsModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="History">
+        <PropertyRef Name="hID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="hID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Picture__postID__4316F928">
+    <End Type="TechNewsModel.Post" Role="Post" Multiplicity="0..1" />
+    <End Type="TechNewsModel.Picture" Role="Picture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="postID" />
+      </Principal>
+      <Dependent Role="Picture">
+        <PropertyRef Name="postID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

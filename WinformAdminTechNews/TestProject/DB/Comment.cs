@@ -18,5 +18,8 @@ namespace TestProject.DB
         public string commentContent { get; set; }
         public Nullable<int> aID { get; set; }
         public Nullable<int> postID { get; set; }
+    
+        public virtual Account Account { get; set; }
+        public virtual Post Post { get; set; }
     }
 }

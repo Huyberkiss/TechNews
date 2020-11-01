@@ -109,6 +109,12 @@
     <Compile Include="DB\Role.cs">
       <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmInsertUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInsertUser.Designer.cs">
+      <DependentUpon>frmInsertUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmInsertUser.resx">
+      <DependentUpon>frmInsertUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +191,7 @@
       <LastGenOutput>DBContext.cs</LastGenOutput>
     </Content>
     <Content Include="img\Icon.jpg" />
+    <None Include="Resources\user.png" />
     <Content Include="Resources\userma.png" />
     <None Include="Resources\userma2.png" />
     <None Include="Resources\userma1.png" />

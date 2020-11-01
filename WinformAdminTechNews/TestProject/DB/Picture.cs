@@ -17,5 +17,7 @@ namespace TestProject.DB
         public int pictureID { get; set; }
         public string urlPicture { get; set; }
         public Nullable<int> postID { get; set; }
+    
+        public virtual Post Post { get; set; }
     }
 }

@@ -21,9 +21,35 @@ namespace TestProject.Forms
 
         public void show()
         {
-            TechNewsEntities db = new TechNewsEntities();
-            var data = (from d in db.Accounts select d);
-            dtTable.DataSource = data.ToList();
+            using (TechNewsEntities db = new TechNewsEntities())
+            {
+                var data = from a in db.Accounts
+                           select new
+                           {
+                               ID = a.aID,
+                               Username = a.aUsername,
+                               Fullname = a.aFullname,
+                               Birthday = a.aBirthday,
+                               Gender = a.aGender,
+                               Phone = a.aPhone,
+                               Email = a.aEmail,
+                               Address = a.aAddress,
+                               Status = a.aStatus,
+                               DateAdd = a.aDateAdded,
+                               Role = a.Role.roleName,
+                               Country = a.Country.countryName
+                           };
+                dtTable.DataSource = data.ToList();
+                //dtTable.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dtTable.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+            }
+
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            frmInsertUser insert = new frmInsertUser();
+            insert.Show();
         }
     }
 }
