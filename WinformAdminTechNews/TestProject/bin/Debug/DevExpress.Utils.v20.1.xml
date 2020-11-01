@@ -3223,6 +3223,12 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.CheckContextButton"/> class.</para>
       </summary>
     </member>
+    <member name="P:DevExpress.Utils.CheckContextButton.AllowHtmlText">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="M:DevExpress.Utils.CheckContextButton.BindCommand(System.Linq.Expressions.Expression{System.Action},System.Object,System.Func{System.Object})">
       <summary>
         <para>Uses the command selector to find an appropriate parameterized command in the source and bind it to this <see cref="T:DevExpress.Utils.CheckContextButton"/>.</para>
@@ -3299,6 +3305,12 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Gets or sets the glyph displayed by the current button in the checked state when it is hovered over with the mouse cursor.</para>
       </summary>
       <value>An Image object that specifies the glyph displayed by the current button.</value>
+    </member>
+    <member name="P:DevExpress.Utils.CheckContextButton.HyperLinkColor">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Utils.CheckContextButton.ImageOptions">
       <summary>

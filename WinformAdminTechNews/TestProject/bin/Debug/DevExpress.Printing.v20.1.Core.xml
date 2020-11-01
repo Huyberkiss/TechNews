@@ -16951,7 +16951,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Gets or sets the transparency of the <see cref="T:DevExpress.XtraPrinting.Drawing.PageWatermark"/>&#39;s text.</para>
       </summary>
-      <value>An integer value specifying the text&#39;s transparency. It should be between 0 and 255, inclusive.</value>
+      <value>The transparency of the text. The value should be between 0 (opaque) and 255 (transparent).</value>
     </member>
     <member name="T:DevExpress.XtraPrinting.Drawing.Watermark">
       <summary>
@@ -22451,7 +22451,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="T:DevExpress.XtraPrinting.ProgressReflector">
       <summary>
-        <para>Provides functionality to reflect the current state of a document&#39;s printing or exporting.</para>
+        <para>Reflects the current state of document printing or exporting.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraPrinting.ProgressReflector.#ctor">
@@ -26321,22 +26321,22 @@ The DefaultBoolean.Default value is equivalent to True.</value>
     </member>
     <member name="F:DevExpress.XtraReports.UI.HorizontalAnchorStyles.Both">
       <summary>
-        <para>A control is anchored to both the left and right edges of its container.</para>
+        <para>Anchores a control to the left and right edges of its container.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left">
       <summary>
-        <para>A control is anchored to the left edge of its container.</para>
+        <para>Anchors a control to the left edge of its container.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UI.HorizontalAnchorStyles.None">
       <summary>
-        <para>A control is not anchored to any edge of its container.</para>
+        <para>Identical to the Left member.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right">
       <summary>
-        <para>A control is anchored to the right edge of its container.</para>
+        <para>Anchors a control to the right edge of its container.</para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraReports.UI.IReportPrintTool">
@@ -26497,22 +26497,22 @@ The DefaultBoolean.Default value is equivalent to True.</value>
     </member>
     <member name="F:DevExpress.XtraReports.UI.VerticalAnchorStyles.Both">
       <summary>
-        <para>A control is anchored to both the top and bottom edges of its container.</para>
+        <para>Anchores a control to the top and bottom edges of its container.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom">
       <summary>
-        <para>A control is anchored to the bottom edge of its container.</para>
+        <para>Anchores a control to the bottom edge of its container.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UI.VerticalAnchorStyles.None">
       <summary>
-        <para>A control is not anchored to any edge of its container.</para>
+        <para>Does not anchor a control to the edges of its container.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UI.VerticalAnchorStyles.Top">
       <summary>
-        <para>A control is anchored to the top edge of its container.</para>
+        <para>Anchores a control to the top edge of its container.</para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraReports.UI.XRConvert">

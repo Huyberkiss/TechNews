@@ -858,15 +858,14 @@
       </summary>
       <value>A <see cref="T:System.Drawing.Printing.PaperSize"/> object.</value>
     </member>
-    <member name="M:DevExpress.XtraPrinting.Preview.PageSetupEditorForm.Setup(System.Drawing.Printing.PrinterSettings.PaperSizeCollection,System.Collections.Generic.IEnumerable{DevExpress.XtraPrinting.Preview.UnitInfo},System.Drawing.GraphicsUnit,System.Drawing.Printing.PaperKind,System.Drawing.Size,System.Boolean,DevExpress.XtraPrinting.Native.MarginsF,DevExpress.XtraPrinting.Native.MarginsF)">
+    <member name="M:DevExpress.XtraPrinting.Preview.PageSetupEditorForm.Setup(System.Drawing.Printing.PrinterSettings.PaperSizeCollection,System.Drawing.Printing.PaperKind,System.Drawing.Size,System.Drawing.GraphicsUnit,System.Boolean,DevExpress.XtraPrinting.Native.MarginsF,DevExpress.XtraPrinting.Native.MarginsF)">
       <summary>
         <para></para>
       </summary>
       <param name="paperSizes"></param>
-      <param name="units"></param>
-      <param name="unit"></param>
       <param name="paperKind"></param>
       <param name="pageSize"></param>
+      <param name="unit"></param>
       <param name="landscape"></param>
       <param name="marginsF"></param>
       <param name="minMarginsF"></param>
