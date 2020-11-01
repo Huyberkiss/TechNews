@@ -16,10 +16,19 @@ namespace TestProject.Forms
         public frmUserManagement()
         {
             InitializeComponent();
-            show();
+            btnView_Click(null, null);
+
         }
 
-        public void show()
+
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            frmInsertUser insert = new frmInsertUser();
+            insert.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             using (TechNewsEntities db = new TechNewsEntities())
             {
@@ -39,17 +48,33 @@ namespace TestProject.Forms
                                Role = a.Role.roleName,
                                Country = a.Country.countryName
                            };
-                dtTable.DataSource = data.ToList();
-                //dtTable.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                //dtTable.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+                dtTable.DataSource = data.Where(a => a.Username.Contains(txtSearch.Text)).ToList();
             }
-
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnView_Click(object sender, EventArgs e)
         {
-            frmInsertUser insert = new frmInsertUser();
-            insert.Show();
+            using (TechNewsEntities db = new TechNewsEntities())
+            {
+                var data = (from a in db.Accounts
+                            select new
+                            {
+                                ID = a.aID,
+                                Username = a.aUsername,
+                                Fullname = a.aFullname,
+                                Birthday = a.aBirthday,
+                                Gender = a.aGender,
+                                Phone = a.aPhone,
+                                Email = a.aEmail,
+                                Address = a.aAddress,
+                                Status = a.aStatus,
+                                DateAdd = a.aDateAdded,
+                                Role = a.Role.roleName,
+                                Country = a.Country.countryName
+                            });
+                dtTable.DataSource = data.ToList();
+
+            }
         }
     }
 }
