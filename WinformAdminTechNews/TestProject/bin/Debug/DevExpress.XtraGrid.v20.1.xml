@@ -2628,6 +2628,13 @@ It specifies whether selecting a date or date range via the embedded calendar fi
       <param name="formatProvider">A <see cref="T:System.IFormatProvider"/> value that provides the format of the summary. The parameter is used to initialize the <see cref="P:DevExpress.XtraGrid.GridSummaryItem.Format"/> property.</param>
       <returns>A <see cref="T:DevExpress.XtraGrid.GridColumnSummaryItem"/> object that is a new summary item added to the collection.</returns>
     </member>
+    <member name="M:DevExpress.XtraGrid.GridColumnSummaryItemCollection.Add(DevExpress.XtraGrid.GridColumnSummaryItem)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="summaryItem"></param>
+      <returns></returns>
+    </member>
     <member name="P:DevExpress.XtraGrid.GridColumnSummaryItemCollection.Item(System.Int32)">
       <summary>
         <para>Gets a summary item by its index.</para>
@@ -3680,6 +3687,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <param name="formatProvider">An IFormatProvider object that implements a formatting routine. This value is assigned to the <see cref="P:DevExpress.XtraGrid.GridSummaryItem.Format"/> property.</param>
       <returns>A <see cref="T:DevExpress.XtraGrid.GridGroupSummaryItem"/> object representing the new summary item.</returns>
     </member>
+    <member name="M:DevExpress.XtraGrid.GridGroupSummaryItemCollection.Add(DevExpress.XtraGrid.GridGroupSummaryItem)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="summaryItem"></param>
+      <returns></returns>
+    </member>
     <member name="P:DevExpress.XtraGrid.GridGroupSummaryItemCollection.View">
       <summary>
         <para>Gets a View that owns the current <see cref="T:DevExpress.XtraGrid.GridGroupSummaryItemCollection"/> object.</para>
@@ -4205,13 +4219,6 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Creates a new total summary item and adds it to the end of the collection.</para>
       </summary>
       <returns>A <see cref="T:DevExpress.XtraGrid.GridSummaryItem"/> object representing the new summary item.</returns>
-    </member>
-    <member name="M:DevExpress.XtraGrid.GridSummaryItemCollection.Add(DevExpress.XtraGrid.GridSummaryItem)">
-      <summary>
-        <para>Adds the specified summary item to the collection.</para>
-      </summary>
-      <param name="item">A <see cref="T:DevExpress.XtraGrid.GridSummaryItem"/> object (or descendant) to be added to the collection.</param>
-      <returns>A zero-based integer representing the new summary item&#39;s position within the collection.</returns>
     </member>
     <member name="M:DevExpress.XtraGrid.GridSummaryItemCollection.AddRange(DevExpress.XtraGrid.GridSummaryItem[])">
       <summary>

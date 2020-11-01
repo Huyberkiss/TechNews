@@ -3976,7 +3976,7 @@
     </member>
     <member name="T:DevExpress.XtraRichEdit.API.Native.ConditionalTableStyleFormattingTypes">
       <summary>
-        <para>Lists values that specify the type of the conditional format operator in a conditional formatting rule.</para>
+        <para>Lists table elements to which a style should be applied.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.ConditionalTableStyleFormattingTypes.BottomLeftCell">
@@ -5683,7 +5683,7 @@
       <summary>
         <para>Specifies an application used to modify the document.</para>
       </summary>
-      <value>The application name. The default is &quot;DevExpress Office File API/<span id="macro" data-macro-template="xx.x.x">20.1.7</span>.0&quot;.</value>
+      <value>The application name. The default is &quot;DevExpress Office File API/<span id="macro" data-macro-template="xx.x.x">20.1.8</span>.0&quot;.</value>
     </member>
     <member name="P:DevExpress.XtraRichEdit.API.Native.DocumentProperties.AppVersion">
       <summary>
