@@ -28,18 +28,21 @@
         height: 80px;
     }
 
+    .author , .date {
+        font-size: 12px;
+    }
+
     video {
         width: 80%;
         margin: 0 auto;
         display: block;
     }
-    
-    .section:nth-child(odd) {
-        background-color: #eef;
+
+    .small-title {
+        width: 60px;
+        padding: 7px;
     }
-    .section:nth-child(even) {
-        background-color: #fff;
-    }
+
 
     .section-title {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -50,8 +53,8 @@
         font-size: 14px;
     }
 
-    .main{
-        width:88%;
+    .main {
+        width: 88%;
     }
 
     .comment {
@@ -62,67 +65,44 @@
 
 @Html.Partial("~/Views/Shared/SubViews/_HomeIntro.cshtml")
 
+@{
+    IEnumerable<TechNews.ViewModel.HomeViewModel> listPost = ViewBag.posts as IEnumerable<TechNews.ViewModel.HomeViewModel>;
+    
+}
+
+
 <div class="container-fluid main">
     <div class="section p-5 m-5">
-        <div class="section-title mb-5">
-            <h5>C# .NET</h5>
+        <div class="title-section">
+            <div class="border bg-dark p text-light small-title">News</div>
+            <hr class="bg-dark" />
         </div>
-        <div class="row">
-            <div class="col-4">
 
-            </div>
-            <div class="col-4">
-                <div class="title">
-                    <div class="h6">ABCDEZ</div>
-                </div>
-                <div class="paragraph text-left pb-4">
-                    Create a blog post subtitle that summarizes your post in a few short,
-                    punchy sentences and entices your audience to continue reading. Wel...
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                    <div class="comment">
-                        <div class="p">Write a comment</div>
-                    </div>
-                    <div class="react">
-                        <i class="far fa-heart"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
 
-            </div>
-        </div>
-    </div>
-    <div class="bg-transparent section p-5 m-5">
-        <div class="section-title mb-5">
-            <h5>C# .NET</h5>
-        </div>
-        <div class="row">
-            <div class="col-4">
-
-            </div>
-            <div class="col-4">
-                <div class="title">
-                    <div class="h6">ABCDEZ</div>
-                </div>
-                <div class="paragraph text-left pb-4">
-                    Create a blog post subtitle that summarizes your post in a few short,
-                    punchy sentences and entices your audience to continue reading. Wel...
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                    <div class="comment">
-                        <div class="p">Write a comment</div>
+        <div class="row my-2">
+            <div class="col-md-8">
+                @foreach (var post in listPost) {
+                    <div class=" mb-4 article d-flex">
+                        <img src="~/img/IMG_6502.jpg" width="20%" />
+                        <div class="ml-3 content-article">
+                            <h4>@post.Title</h4>
+                            <div class="info-article ">
+                                <span class="author font-weight-bold">@post.PosterName</span>
+                                <span class="date text-muted">@String.Format("{0:MM/dd/yyyy}", post.PostedDay)</span>
+                            </div>
+                            <div class="content">
+                                @post.Content
+                            </div>
+                        </div>
                     </div>
-                    <div class="react">
-                        <i class="far fa-heart"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
 
+                }
+            </div>
+            <div class="col-md-4">
+                cho nay de quang cao nhe
             </div>
         </div>
+
+
     </div>
 </div>
