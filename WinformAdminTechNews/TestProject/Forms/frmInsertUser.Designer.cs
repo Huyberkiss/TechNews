@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlTitle = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -47,15 +47,20 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.cbMale = new System.Windows.Forms.CheckBox();
             this.cbFemale = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateBirthday = new System.Windows.Forms.DateTimePicker();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.numRole = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.cbbRole = new System.Windows.Forms.ComboBox();
+            this.cbbCountry = new System.Windows.Forms.ComboBox();
+            this.lblErrorUser = new System.Windows.Forms.Label();
+            this.lblErrorPass = new System.Windows.Forms.Label();
+            this.lblErrorFullName = new System.Windows.Forms.Label();
+            this.lblErrorPhone = new System.Windows.Forms.Label();
+            this.lblErrorEmail = new System.Windows.Forms.Label();
+            this.lblErrorAddress = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numRole)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -68,15 +73,6 @@
             this.pnlTitle.Size = new System.Drawing.Size(800, 98);
             this.pnlTitle.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Image = global::TestProject.Properties.Resources.user;
-            this.button1.Location = new System.Drawing.Point(86, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 69);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -87,6 +83,15 @@
             this.lblTitle.Size = new System.Drawing.Size(224, 48);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Insert User";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::TestProject.Properties.Resources.user;
+            this.button1.Location = new System.Drawing.Point(86, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 69);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblUsername
             // 
@@ -189,6 +194,7 @@
             // 
             this.txtPass.Location = new System.Drawing.Point(308, 174);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(200, 22);
             this.txtPass.TabIndex = 14;
             // 
@@ -205,6 +211,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(200, 22);
             this.txtPhone.TabIndex = 16;
+            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
             // cbMale
             // 
@@ -215,6 +222,7 @@
             this.cbMale.TabIndex = 17;
             this.cbMale.Text = "Male";
             this.cbMale.UseVisualStyleBackColor = true;
+            this.cbMale.CheckedChanged += new System.EventHandler(this.cbMale_CheckedChanged);
             // 
             // cbFemale
             // 
@@ -225,13 +233,14 @@
             this.cbFemale.TabIndex = 18;
             this.cbFemale.Text = "Female";
             this.cbFemale.UseVisualStyleBackColor = true;
+            this.cbFemale.CheckedChanged += new System.EventHandler(this.cbFemale_CheckedChanged);
             // 
-            // dateTimePicker1
+            // dateBirthday
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(308, 247);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dateBirthday.Location = new System.Drawing.Point(308, 247);
+            this.dateBirthday.Name = "dateBirthday";
+            this.dateBirthday.Size = new System.Drawing.Size(200, 22);
+            this.dateBirthday.TabIndex = 19;
             // 
             // txtEmail
             // 
@@ -239,6 +248,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 22);
             this.txtEmail.TabIndex = 20;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtAddress
             // 
@@ -246,20 +256,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(200, 22);
             this.txtAddress.TabIndex = 21;
-            // 
-            // numRole
-            // 
-            this.numRole.Location = new System.Drawing.Point(306, 429);
-            this.numRole.Name = "numRole";
-            this.numRole.Size = new System.Drawing.Size(200, 22);
-            this.numRole.TabIndex = 22;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(306, 468);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(200, 22);
-            this.numericUpDown1.TabIndex = 23;
             // 
             // btnSubmit
             // 
@@ -270,18 +266,95 @@
             this.btnSubmit.TabIndex = 24;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // cbbRole
+            // 
+            this.cbbRole.FormattingEnabled = true;
+            this.cbbRole.Location = new System.Drawing.Point(306, 425);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(200, 24);
+            this.cbbRole.TabIndex = 25;
+            // 
+            // cbbCountry
+            // 
+            this.cbbCountry.FormattingEnabled = true;
+            this.cbbCountry.Location = new System.Drawing.Point(306, 466);
+            this.cbbCountry.Name = "cbbCountry";
+            this.cbbCountry.Size = new System.Drawing.Size(200, 24);
+            this.cbbCountry.TabIndex = 26;
+            // 
+            // lblErrorUser
+            // 
+            this.lblErrorUser.AutoSize = true;
+            this.lblErrorUser.Location = new System.Drawing.Point(529, 140);
+            this.lblErrorUser.Name = "lblErrorUser";
+            this.lblErrorUser.Size = new System.Drawing.Size(16, 17);
+            this.lblErrorUser.TabIndex = 27;
+            this.lblErrorUser.Text = "  ";
+            // 
+            // lblErrorPass
+            // 
+            this.lblErrorPass.AutoSize = true;
+            this.lblErrorPass.Location = new System.Drawing.Point(529, 179);
+            this.lblErrorPass.Name = "lblErrorPass";
+            this.lblErrorPass.Size = new System.Drawing.Size(12, 17);
+            this.lblErrorPass.TabIndex = 28;
+            this.lblErrorPass.Text = " ";
+            // 
+            // lblErrorFullName
+            // 
+            this.lblErrorFullName.AutoSize = true;
+            this.lblErrorFullName.Location = new System.Drawing.Point(529, 214);
+            this.lblErrorFullName.Name = "lblErrorFullName";
+            this.lblErrorFullName.Size = new System.Drawing.Size(12, 17);
+            this.lblErrorFullName.TabIndex = 29;
+            this.lblErrorFullName.Text = " ";
+            // 
+            // lblErrorPhone
+            // 
+            this.lblErrorPhone.AutoSize = true;
+            this.lblErrorPhone.Location = new System.Drawing.Point(529, 323);
+            this.lblErrorPhone.Name = "lblErrorPhone";
+            this.lblErrorPhone.Size = new System.Drawing.Size(12, 17);
+            this.lblErrorPhone.TabIndex = 30;
+            this.lblErrorPhone.Text = " ";
+            // 
+            // lblErrorEmail
+            // 
+            this.lblErrorEmail.AutoSize = true;
+            this.lblErrorEmail.Location = new System.Drawing.Point(529, 361);
+            this.lblErrorEmail.Name = "lblErrorEmail";
+            this.lblErrorEmail.Size = new System.Drawing.Size(12, 17);
+            this.lblErrorEmail.TabIndex = 31;
+            this.lblErrorEmail.Text = " ";
+            // 
+            // lblErrorAddress
+            // 
+            this.lblErrorAddress.AutoSize = true;
+            this.lblErrorAddress.Location = new System.Drawing.Point(529, 396);
+            this.lblErrorAddress.Name = "lblErrorAddress";
+            this.lblErrorAddress.Size = new System.Drawing.Size(12, 17);
+            this.lblErrorAddress.TabIndex = 32;
+            this.lblErrorAddress.Text = " ";
             // 
             // frmInsertUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 615);
+            this.Controls.Add(this.lblErrorAddress);
+            this.Controls.Add(this.lblErrorEmail);
+            this.Controls.Add(this.lblErrorPhone);
+            this.Controls.Add(this.lblErrorFullName);
+            this.Controls.Add(this.lblErrorPass);
+            this.Controls.Add(this.lblErrorUser);
+            this.Controls.Add(this.cbbCountry);
+            this.Controls.Add(this.cbbRole);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.numRole);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateBirthday);
             this.Controls.Add(this.cbFemale);
             this.Controls.Add(this.cbMale);
             this.Controls.Add(this.txtPhone);
@@ -305,8 +378,6 @@
             this.Load += new System.EventHandler(this.frmInsertUser_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numRole)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,11 +404,18 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.CheckBox cbMale;
         private System.Windows.Forms.CheckBox cbFemale;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateBirthday;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.NumericUpDown numRole;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.ComboBox cbbRole;
+        private System.Windows.Forms.ComboBox cbbCountry;
+        private System.Windows.Forms.Label lblErrorUser;
+        private System.Windows.Forms.Label lblErrorPass;
+        private System.Windows.Forms.Label lblErrorFullName;
+        private System.Windows.Forms.Label lblErrorPhone;
+        private System.Windows.Forms.Label lblErrorEmail;
+        private System.Windows.Forms.Label lblErrorAddress;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

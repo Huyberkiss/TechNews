@@ -32,7 +32,7 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.btnView = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dtTable = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -43,7 +43,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbRole = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbbStatus = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.cbActive = new System.Windows.Forms.CheckBox();
+            this.cbHidden = new System.Windows.Forms.CheckBox();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTable)).BeginInit();
@@ -58,7 +60,7 @@
             this.pnlTitle.BackColor = System.Drawing.Color.Black;
             this.pnlTitle.Controls.Add(this.btnView);
             this.pnlTitle.Controls.Add(this.pictureBox1);
-            this.pnlTitle.Controls.Add(this.btnDelete);
+            this.pnlTitle.Controls.Add(this.btnUpdate);
             this.pnlTitle.Controls.Add(this.btnInsert);
             this.pnlTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlTitle.Location = new System.Drawing.Point(0, 1);
@@ -89,17 +91,18 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // btnDelete
+            // btnUpdate
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(45, 460);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(144, 50);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(45, 460);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(144, 50);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -126,10 +129,12 @@
             this.dtTable.RowTemplate.Height = 24;
             this.dtTable.Size = new System.Drawing.Size(1153, 402);
             this.dtTable.TabIndex = 1;
+            this.dtTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtTable_CellClick);
             // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlHeader.Controls.Add(this.btnClose);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Location = new System.Drawing.Point(233, 1);
             this.pnlHeader.Name = "pnlHeader";
@@ -195,7 +200,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbbStatus);
+            this.groupBox2.Controls.Add(this.cbHidden);
+            this.groupBox2.Controls.Add(this.cbActive);
             this.groupBox2.Location = new System.Drawing.Point(1153, 107);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(252, 67);
@@ -203,13 +209,44 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Change Status";
             // 
-            // cbbStatus
+            // btnClose
             // 
-            this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(47, 19);
-            this.cbbStatus.Name = "cbbStatus";
-            this.cbbStatus.Size = new System.Drawing.Size(171, 24);
-            this.cbbStatus.TabIndex = 0;
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Black;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
+            this.btnClose.FlatAppearance.BorderSize = 3;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1107, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(76, 63);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // cbActive
+            // 
+            this.cbActive.AutoSize = true;
+            this.cbActive.Location = new System.Drawing.Point(40, 23);
+            this.cbActive.Name = "cbActive";
+            this.cbActive.Size = new System.Drawing.Size(68, 21);
+            this.cbActive.TabIndex = 0;
+            this.cbActive.Text = "Active";
+            this.cbActive.UseVisualStyleBackColor = true;
+            // 
+            // cbHidden
+            // 
+            this.cbHidden.AutoSize = true;
+            this.cbHidden.Location = new System.Drawing.Point(149, 22);
+            this.cbHidden.Name = "cbHidden";
+            this.cbHidden.Size = new System.Drawing.Size(75, 21);
+            this.cbHidden.TabIndex = 1;
+            this.cbHidden.Text = "Hidden";
+            this.cbHidden.UseVisualStyleBackColor = true;
             // 
             // frmUserManagement
             // 
@@ -222,7 +259,9 @@
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.dtTable);
             this.Controls.Add(this.pnlTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUserManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserManagement";
             this.pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -233,6 +272,7 @@
             this.grpboxUser.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -242,7 +282,7 @@
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.DataGridView dtTable;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -252,7 +292,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbbStatus;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.CheckBox cbHidden;
+        private System.Windows.Forms.CheckBox cbActive;
     }
 }

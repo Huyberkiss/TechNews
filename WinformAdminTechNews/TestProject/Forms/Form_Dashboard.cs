@@ -22,13 +22,13 @@ namespace TestProject.Forms
             this.Dispose();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnAccountManagement_Click(object sender, EventArgs e)
         {
+            frmUserManagement um = new frmUserManagement();
 
-        }
+            um.Show();
+            Hide();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
         }
     }

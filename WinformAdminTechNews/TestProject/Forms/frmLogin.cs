@@ -62,6 +62,7 @@ namespace TestProject
             {
                 MessageBox.Show("Username and password is incorrect!!!");
             }
+            this.Hide();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
