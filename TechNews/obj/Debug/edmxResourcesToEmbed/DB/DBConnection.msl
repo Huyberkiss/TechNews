@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TechNewsModelStoreContainer" CdmEntityContainer="TechNewsEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="TechNewsModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="aID" ColumnName="aID" />
+          <ScalarProperty Name="aUsername" ColumnName="aUsername" />
+          <ScalarProperty Name="aPassword" ColumnName="aPassword" />
+          <ScalarProperty Name="aFullname" ColumnName="aFullname" />
+          <ScalarProperty Name="aBirthday" ColumnName="aBirthday" />
+          <ScalarProperty Name="aGender" ColumnName="aGender" />
+          <ScalarProperty Name="aPhone" ColumnName="aPhone" />
+          <ScalarProperty Name="aEmail" ColumnName="aEmail" />
+          <ScalarProperty Name="aAddress" ColumnName="aAddress" />
+          <ScalarProperty Name="aStatus" ColumnName="aStatus" />
+          <ScalarProperty Name="aDateAdded" ColumnName="aDateAdded" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="TechNewsModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="cateID" ColumnName="cateID" />
+          <ScalarProperty Name="cateName" ColumnName="cateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="TechNewsModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="commentID" ColumnName="commentID" />
+          <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+          <ScalarProperty Name="aID" ColumnName="aID" />
+          <ScalarProperty Name="postID" ColumnName="postID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="TechNewsModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="countryName" ColumnName="countryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Histories">
+      <EntityTypeMapping TypeName="TechNewsModel.History">
+        <MappingFragment StoreEntitySet="History">
+          <ScalarProperty Name="hID" ColumnName="hID" />
+          <ScalarProperty Name="dateSubmited" ColumnName="dateSubmited" />
+          <ScalarProperty Name="dateAccepted" ColumnName="dateAccepted" />
+          <ScalarProperty Name="typeAccept" ColumnName="typeAccept" />
+          <ScalarProperty Name="censorID" ColumnName="censorID" />
+          <ScalarProperty Name="posterID" ColumnName="posterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="TechNewsModel.Picture">
+        <MappingFragment StoreEntitySet="Picture">
+          <ScalarProperty Name="pictureID" ColumnName="pictureID" />
+          <ScalarProperty Name="urlPicture" ColumnName="urlPicture" />
+          <ScalarProperty Name="postID" ColumnName="postID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="TechNewsModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="postID" ColumnName="postID" />
+          <ScalarProperty Name="postTitle" ColumnName="postTitle" />
+          <ScalarProperty Name="postContent" ColumnName="postContent" />
+          <ScalarProperty Name="postStatus" ColumnName="postStatus" />
+          <ScalarProperty Name="cateID" ColumnName="cateID" />
+          <ScalarProperty Name="hID" ColumnName="hID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TechNewsModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

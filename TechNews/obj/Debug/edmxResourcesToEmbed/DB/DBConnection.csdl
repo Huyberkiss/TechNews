@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TechNewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="aID" />
+    </Key>
+    <Property Name="aID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="aPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="aFullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="aBirthday" Type="DateTime" Precision="0" />
+    <Property Name="aGender" Type="Int32" />
+    <Property Name="aPhone" Type="Int32" />
+    <Property Name="aEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="aAddress" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+    <Property Name="aStatus" Type="Int32" />
+    <Property Name="aDateAdded" Type="DateTime" Precision="0" />
+    <Property Name="roleID" Type="Int32" />
+    <Property Name="countryID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="cateID" />
+    </Key>
+    <Property Name="cateID" Type="Int32" Nullable="false" />
+    <Property Name="cateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="commentID" />
+    </Key>
+    <Property Name="commentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="commentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aID" Type="Int32" />
+    <Property Name="postID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="countryID" />
+    </Key>
+    <Property Name="countryID" Type="Int32" Nullable="false" />
+    <Property Name="countryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="hID" />
+    </Key>
+    <Property Name="hID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateSubmited" Type="DateTime" Precision="0" />
+    <Property Name="dateAccepted" Type="DateTime" Precision="0" />
+    <Property Name="typeAccept" Type="Int32" />
+    <Property Name="censorID" Type="Int32" />
+    <Property Name="posterID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="pictureID" />
+    </Key>
+    <Property Name="pictureID" Type="Int32" Nullable="false" />
+    <Property Name="urlPicture" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="postID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="postID" />
+    </Key>
+    <Property Name="postID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="postTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="postContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="postStatus" Type="Int32" Nullable="false" />
+    <Property Name="cateID" Type="Int32" Nullable="false" />
+    <Property Name="hID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="TechNewsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Histories" EntityType="Self.History" />
+    <EntitySet Name="Pictures" EntityType="Self.Picture" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+  </EntityContainer>
+</Schema>

@@ -156,6 +156,7 @@ D:\C#\TechNews\TechNews\obj\Debug\TechNews.csproj.CoreCompileInputs.cache
 D:\C#\TechNews\TechNews\obj\Debug\TechNews.csproj.CopyComplete
 D:\C#\TechNews\TechNews\obj\Debug\TechNews.dll
 D:\C#\TechNews\TechNews\obj\Debug\TechNews.pdb
+<<<<<<< HEAD
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\bin\TechNews.dll.config
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\bin\TechNews.dll
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\bin\TechNews.pdb
@@ -235,3 +236,9 @@ D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\obj\Debug\TechNews.csproj.Core
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\obj\Debug\TechNews.csproj.CopyComplete
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\obj\Debug\TechNews.dll
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\TechNews\obj\Debug\TechNews.pdb
+=======
+D:\C#\TechNews\TechNews\bin\EntityFramework.dll
+D:\C#\TechNews\TechNews\bin\EntityFramework.SqlServer.dll
+D:\C#\TechNews\TechNews\bin\EntityFramework.xml
+D:\C#\TechNews\TechNews\bin\EntityFramework.SqlServer.xml
+>>>>>>> layout
