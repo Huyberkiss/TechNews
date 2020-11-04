@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="DB\Account.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
@@ -197,7 +198,20 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\1-10.jpg" />
+    <Content Include="images\1-4.jpg" />
+    <Content Include="images\1-5.jpg" />
+    <Content Include="images\1-6.jpg" />
+    <Content Include="images\1-7.jpg" />
+    <Content Include="images\1-8.jpg" />
+    <Content Include="images\1-9.jpg" />
+    <Content Include="images\2-4.jpg" />
+    <Content Include="images\2-5.jpg" />
+    <Content Include="images\2-6.jpg" />
+    <Content Include="images\2-7.jpg" />
+    <Content Include="images\3-4.jpg" />
     <Content Include="img\IMG_6502.JPG" />
+    <Content Include="img\pic1.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -340,6 +354,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\SubViews\_HomeIntro.cshtml" />
     <Content Include="Views\Authentication\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

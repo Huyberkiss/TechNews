@@ -22,15 +22,29 @@ namespace TechNews.Controllers {
             var Posts = (from post in _dbContext.Posts
                          join history in _dbContext.Histories on post.hID equals history.hID
                          join user in _dbContext.Accounts on history.posterID equals user.aID
+                         join cate in _dbContext.Categories on post.cateID equals cate.cateID
+
                          select new HomeViewModel() {
-                             Id = post.postID,
+                             PostId = post.postID,
                              Title = post.postTitle,
                              Content = post.postContent,
                              PosterName = user.aFullname,
-                             PostedDay = (DateTime)history.dateAccepted
-                         }).ToList<HomeViewModel>();
+                             PostedDay = (DateTime)history.dateAccepted,
+                             CateId = cate.cateID,
+                             CateName = cate.cateName
 
-            ViewBag.posts = Posts;  
+                         }).ToList();
+
+            /*  Posts.ForEach(post => {
+                  var _pic = _dbContext.Pictures.Select(pic => pic).Where( p => p.postID == post.PostId);
+                  post.UrlPicture.AddRange(_pic);
+              });*/
+
+            Posts.ForEach(post => {
+                post.mainPic = _dbContext.Pictures.Where(pic => pic.postID == post.PostId).Select(pic => pic.picURL).FirstOrDefault();
+            });
+
+            ViewBag.posts = Posts;
 
 
             ViewBag.category = _dbContext.Categories.ToList<Category>();
@@ -39,8 +53,9 @@ namespace TechNews.Controllers {
         }
 
 
-        public ActionResult About(string x, string y) {
+        public ActionResult About() {
             ViewBag.Message = "Your application description page.";
+
 
 
             return View();

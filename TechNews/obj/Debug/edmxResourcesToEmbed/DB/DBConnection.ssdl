@@ -8,11 +8,7 @@
     <Property Name="aUsername" Type="varchar" MaxLength="50" />
     <Property Name="aPassword" Type="varchar" MaxLength="32" />
     <Property Name="aFullname" Type="varchar" MaxLength="100" />
-    <Property Name="aBirthday" Type="date" />
-    <Property Name="aGender" Type="int" />
-    <Property Name="aPhone" Type="int" />
     <Property Name="aEmail" Type="varchar" MaxLength="100" />
-    <Property Name="aAddress" Type="varchar" MaxLength="125" />
     <Property Name="aStatus" Type="int" />
     <Property Name="aDateAdded" Type="date" />
     <Property Name="roleID" Type="int" />
@@ -22,15 +18,15 @@
     <Key>
       <PropertyRef Name="cateID" />
     </Key>
-    <Property Name="cateID" Type="int" Nullable="false" />
-    <Property Name="cateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="cateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cateName" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Comment">
     <Key>
       <PropertyRef Name="commentID" />
     </Key>
     <Property Name="commentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="commentContent" Type="ntext" />
+    <Property Name="commentContent" Type="text" />
     <Property Name="aID" Type="int" />
     <Property Name="postID" Type="int" />
   </EntityType>
@@ -38,8 +34,8 @@
     <Key>
       <PropertyRef Name="countryID" />
     </Key>
-    <Property Name="countryID" Type="int" Nullable="false" />
-    <Property Name="countryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="countryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryName" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="History">
     <Key>
@@ -54,10 +50,10 @@
   </EntityType>
   <EntityType Name="Picture">
     <Key>
-      <PropertyRef Name="pictureID" />
+      <PropertyRef Name="picID" />
     </Key>
-    <Property Name="pictureID" Type="int" Nullable="false" />
-    <Property Name="urlPicture" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="picID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="picURL" Type="varchar" MaxLength="100" />
     <Property Name="postID" Type="int" />
   </EntityType>
   <EntityType Name="Post">
@@ -65,11 +61,11 @@
       <PropertyRef Name="postID" />
     </Key>
     <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="postTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="postContent" Type="ntext" Nullable="false" />
-    <Property Name="postStatus" Type="int" Nullable="false" />
-    <Property Name="cateID" Type="int" Nullable="false" />
-    <Property Name="hID" Type="int" Nullable="false" />
+    <Property Name="postTitle" Type="varchar" MaxLength="255" />
+    <Property Name="postContent" Type="text" />
+    <Property Name="postStatus" Type="int" />
+    <Property Name="cateID" Type="int" />
+    <Property Name="hID" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -78,6 +74,114 @@
     <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roleName" Type="varchar" MaxLength="30" />
   </EntityType>
+  <Association Name="FK__Account__country__29572725">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="countryID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="countryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Account__roleID__286302EC">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__aID__38996AB5">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="aID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="aID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__postID__398D8EEE">
+    <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="postID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="postID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__History__censorI__2C3393D0">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="History" Type="Self.History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="aID" />
+      </Principal>
+      <Dependent Role="History">
+        <PropertyRef Name="censorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__History__posterI__2D27B809">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="History" Type="Self.History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="aID" />
+      </Principal>
+      <Dependent Role="History">
+        <PropertyRef Name="posterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Picture__postID__35BCFE0A">
+    <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+    <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="postID" />
+      </Principal>
+      <Dependent Role="Picture">
+        <PropertyRef Name="postID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Post__cateID__31EC6D26">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Post" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="cateID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="cateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Post__hID__32E0915F">
+    <End Role="History" Type="Self.History" Multiplicity="0..1" />
+    <End Role="Post" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="History">
+        <PropertyRef Name="hID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="hID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TechNewsModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -87,5 +191,41 @@
     <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Account__country__29572725" Association="Self.FK__Account__country__29572725">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Account__roleID__286302EC" Association="Self.FK__Account__roleID__286302EC">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__aID__38996AB5" Association="Self.FK__Comment__aID__38996AB5">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__postID__398D8EEE" Association="Self.FK__Comment__postID__398D8EEE">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__History__censorI__2C3393D0" Association="Self.FK__History__censorI__2C3393D0">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="History" EntitySet="History" />
+    </AssociationSet>
+    <AssociationSet Name="FK__History__posterI__2D27B809" Association="Self.FK__History__posterI__2D27B809">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="History" EntitySet="History" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Picture__postID__35BCFE0A" Association="Self.FK__Picture__postID__35BCFE0A">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Picture" EntitySet="Picture" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Post__cateID__31EC6D26" Association="Self.FK__Post__cateID__31EC6D26">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Post__hID__32E0915F" Association="Self.FK__Post__hID__32E0915F">
+      <End Role="History" EntitySet="History" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

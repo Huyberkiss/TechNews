@@ -14,8 +14,10 @@ namespace TechNews.DB
     
     public partial class Picture
     {
-        public int pictureID { get; set; }
-        public string urlPicture { get; set; }
+        public int picID { get; set; }
+        public string picURL { get; set; }
         public Nullable<int> postID { get; set; }
+    
+        public virtual Post Post { get; set; }
     }
 }
