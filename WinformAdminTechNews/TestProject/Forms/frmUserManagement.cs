@@ -18,17 +18,18 @@ namespace TestProject.Forms
         public frmUserManagement()
         {
             InitializeComponent();
-            btnView_Click(null, null);
+            showData();
             getRole();
         }
      
+      
         private void btnInsert_Click(object sender, EventArgs e)
         {
             frmInsertUser insert = new frmInsertUser();
             insert.Show();
         }
-
-        public void btnView_Click(object sender, EventArgs e)
+    
+        public void showData()
         {
             var data = (from a in db.Accounts
                         select new
@@ -37,15 +38,14 @@ namespace TestProject.Forms
                             Username = a.aUsername,
                             Fullname = a.aFullname,
                             Email = a.aEmail,
-                            Status = (a.aStatus == 0 ) ? "Active" : "Inactive",
+                            Status = (a.aStatus == 0) ? "Active" : "Inactive",
                             DateAdd = a.aDateAdded,
                             Role = a.Role.roleName,
                             Country = a.Country.countryName
                         });
             dtTable.DataSource = data.ToList();
-           
         }
-
+        
         private void getRole()
         {
             var role = (from r in db.Roles
@@ -57,7 +57,9 @@ namespace TestProject.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            new Form_Dashboard().Show();
+            this.Dispose();
         }
 
         
@@ -68,7 +70,7 @@ namespace TestProject.Forms
             update.roleID = cbbRole.SelectedIndex + 1;
             update.aStatus = cbActive.CheckState == CheckState.Checked ? 0 : 1;
             db.SaveChanges();
-            btnView_Click(sender, e);
+            showData();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -88,16 +90,18 @@ namespace TestProject.Forms
             dtTable.DataSource = data.Where(a => a.Username.Contains(txtSearch.Text)).ToList();
         }
 
-        private void frmUserManagement_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void dtTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbbRole.Text = dtTable.Rows[e.RowIndex].Cells["Role"].Value.ToString();         
-            string status = dtTable.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-            cbActive.CheckState =  status == "Active" ? CheckState.Checked : CheckState.Unchecked;          
+            try
+            {
+                cbbRole.Text = dtTable.Rows[e.RowIndex].Cells["Role"].Value.ToString();
+                string status = dtTable.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                cbActive.CheckState = status == "Active" ? CheckState.Checked : CheckState.Unchecked;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Don't click title!");
+            }
+                   
         }
     }
 }

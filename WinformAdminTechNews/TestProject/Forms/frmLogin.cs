@@ -1,21 +1,25 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestProject.Common;
+using TestProject.DB;
 using TestProject.Forms;
 
 namespace TestProject
 {
     public partial class frmLogin : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-GK1DSIU;Initial Catalog=TechNews;Integrated Security=True");
+        TechNewsEntities db = new TechNewsEntities();
+        //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-GK1DSIU;Initial Catalog=TechNews;Integrated Security=True");
         public frmLogin()
         {
             InitializeComponent();
@@ -30,29 +34,29 @@ namespace TestProject
                 lblTime.Text = DateTime.Now.ToString();
                 await Task.Delay(1000);
             }
-        } 
+        }
 
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter sda = new SqlDataAdapter("select roleID from Account where aUsername='" + txtUsername.Text + "' and aPassword='"+ Encryptor.EncryptMD5(txtPassword.Text) +"'", conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if(dt.Rows.Count == 1)
+            var passMD5 = new Encryptor().EncryptMD5(txtPassword.Text);
+            Account acc = db.Accounts.FirstOrDefault(a => a.aUsername.Equals(txtUsername.Text) && a.aPassword.Equals(passMD5));
+            if (acc != null )
             {
-                int role = Convert.ToInt32(dt.Rows[0]["roleID"].ToString());
-                if(role == 1)
+               
+                if (acc.roleID == 1)
                 {
                     Form_Dashboard fd = new Form_Dashboard();
                     fd.Show();
                     txtUsername.Text = "";
                     txtPassword.Text = "";
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Only Admin Login!!!");
                     txtUsername.Text = "";
@@ -61,8 +65,31 @@ namespace TestProject
             } else
             {
                 MessageBox.Show("Username and password is incorrect!!!");
+                txtPassword.Text = "";
             }
-            this.Hide();
+            //SqlDataAdapter sda = new SqlDataAdapter("select roleID from Account where aUsername='" + txtUsername.Text + "' and aPassword='"+ Encryptor.EncryptMD5(txtPassword.Text) +"'", conn);
+            //DataTable dt = new DataTable();
+            //sda.Fill(dt);
+            //if(dt.Rows.Count == 1)
+            //{
+            //    int role = Convert.ToInt32(dt.Rows[0]["roleID"].ToString());
+            //    if(role == 1)
+            //    {
+            //        Form_Dashboard fd = new Form_Dashboard();
+            //        fd.Show();
+            //        txtUsername.Text = "";
+            //        txtPassword.Text = "";
+            //    } else
+            //    {
+            //        MessageBox.Show("Only Admin Login!!!");
+            //        txtUsername.Text = "";
+            //        txtPassword.Text = "";
+            //    }
+            //} else
+            //{
+            //    MessageBox.Show("Username and password is incorrect!!!");
+            //}
+            //this.Hide();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

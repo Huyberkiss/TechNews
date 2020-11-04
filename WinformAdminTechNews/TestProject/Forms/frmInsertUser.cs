@@ -12,6 +12,7 @@ using TestProject.DB;
 using System.Text.RegularExpressions;
 using System.CodeDom;
 using System.Drawing;
+using TestProject.Common;
 
 namespace TestProject.Forms
 {
@@ -86,7 +87,7 @@ namespace TestProject.Forms
                 db.Accounts.Add(new Account()
                 {
                     aUsername = txtUser.Text.Trim(),
-                    aPassword = Common.Encryptor.EncryptMD5(txtPass.Text).Trim(),
+                    aPassword = new Encryptor().EncryptMD5(txtPass.Text.Trim()),
                     aFullname = txtFullName.Text.Trim(),               
                     aEmail = txtEmail.Text.Trim(),
                     aStatus = 0,
@@ -95,6 +96,7 @@ namespace TestProject.Forms
                     countryID = Convert.ToInt32(c)
                 });
                 db.SaveChanges();
+                new frmUserManagement().Show();
                 Hide();              
             }
 

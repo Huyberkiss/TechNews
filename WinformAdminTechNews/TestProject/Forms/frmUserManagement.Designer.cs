@@ -77,7 +77,6 @@
             this.btnView.TabIndex = 4;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = false;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // pictureBox1
             // 
@@ -151,7 +150,7 @@
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1109, 21);
+            this.btnClose.Location = new System.Drawing.Point(1067, 22);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(76, 63);
             this.btnClose.TabIndex = 6;
@@ -240,7 +239,6 @@
             this.Name = "frmUserManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserManagement";
-            this.Load += new System.EventHandler(this.frmUserManagement_Load);
             this.pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTable)).EndInit();

@@ -13,7 +13,7 @@ namespace TestProject.Common
         ///Input: sToEncrypt (chuỗi cần mã hóa)
         ///Output: Chuỗi sau khi mã hóa
         ///</sumary>
-        public static string EncryptMD5(string sToEncrypt)
+        public string EncryptMD5(string sToEncrypt)
         {
             System.Text.UTF8Encoding ue = new System.Text.UTF8Encoding();
             byte[] bytes = ue.GetBytes(sToEncrypt);
