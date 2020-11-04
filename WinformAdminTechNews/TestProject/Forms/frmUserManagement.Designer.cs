@@ -36,16 +36,14 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.dtTable = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpboxUser = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbRole = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.cbActive = new System.Windows.Forms.CheckBox();
-            this.cbHidden = new System.Windows.Forms.CheckBox();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTable)).BeginInit();
@@ -63,9 +61,9 @@
             this.pnlTitle.Controls.Add(this.btnUpdate);
             this.pnlTitle.Controls.Add(this.btnInsert);
             this.pnlTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnlTitle.Location = new System.Drawing.Point(0, 1);
+            this.pnlTitle.Location = new System.Drawing.Point(0, -3);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(235, 606);
+            this.pnlTitle.Size = new System.Drawing.Size(235, 610);
             this.pnlTitle.TabIndex = 0;
             // 
             // btnView
@@ -136,10 +134,29 @@
             this.pnlHeader.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlHeader.Controls.Add(this.btnClose);
             this.pnlHeader.Controls.Add(this.lblTitle);
-            this.pnlHeader.Location = new System.Drawing.Point(233, 1);
+            this.pnlHeader.Location = new System.Drawing.Point(233, -3);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1648, 100);
+            this.pnlHeader.Size = new System.Drawing.Size(1648, 104);
             this.pnlHeader.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Black;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
+            this.btnClose.FlatAppearance.BorderSize = 3;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1109, 21);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(76, 63);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTitle
             // 
@@ -154,7 +171,6 @@
             // 
             // grpboxUser
             // 
-            this.grpboxUser.Controls.Add(this.btnSearch);
             this.grpboxUser.Controls.Add(this.txtSearch);
             this.grpboxUser.Location = new System.Drawing.Point(252, 107);
             this.grpboxUser.Name = "grpboxUser";
@@ -163,22 +179,13 @@
             this.grpboxUser.TabStop = false;
             this.grpboxUser.Text = "Search by Username";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(292, 21);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 24);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(6, 21);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(269, 22);
+            this.txtSearch.Size = new System.Drawing.Size(371, 22);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // groupBox1
             // 
@@ -200,53 +207,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbHidden);
             this.groupBox2.Controls.Add(this.cbActive);
-            this.groupBox2.Location = new System.Drawing.Point(1153, 107);
+            this.groupBox2.Location = new System.Drawing.Point(1205, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(252, 67);
+            this.groupBox2.Size = new System.Drawing.Size(200, 67);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Change Status";
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Black;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
-            this.btnClose.FlatAppearance.BorderSize = 3;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1107, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(76, 63);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(40, 23);
+            this.cbActive.Location = new System.Drawing.Point(61, 23);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(68, 21);
             this.cbActive.TabIndex = 0;
             this.cbActive.Text = "Active";
             this.cbActive.UseVisualStyleBackColor = true;
-            // 
-            // cbHidden
-            // 
-            this.cbHidden.AutoSize = true;
-            this.cbHidden.Location = new System.Drawing.Point(149, 22);
-            this.cbHidden.Name = "cbHidden";
-            this.cbHidden.Size = new System.Drawing.Size(75, 21);
-            this.cbHidden.TabIndex = 1;
-            this.cbHidden.Text = "Hidden";
-            this.cbHidden.UseVisualStyleBackColor = true;
             // 
             // frmUserManagement
             // 
@@ -263,6 +240,7 @@
             this.Name = "frmUserManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserManagement";
+            this.Load += new System.EventHandler(this.frmUserManagement_Load);
             this.pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTable)).EndInit();
@@ -287,14 +265,12 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox grpboxUser;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.CheckBox cbHidden;
         private System.Windows.Forms.CheckBox cbActive;
     }
 }

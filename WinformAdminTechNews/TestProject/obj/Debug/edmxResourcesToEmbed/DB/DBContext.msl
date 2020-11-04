@@ -8,11 +8,7 @@
           <ScalarProperty Name="aUsername" ColumnName="aUsername" />
           <ScalarProperty Name="aPassword" ColumnName="aPassword" />
           <ScalarProperty Name="aFullname" ColumnName="aFullname" />
-          <ScalarProperty Name="aBirthday" ColumnName="aBirthday" />
-          <ScalarProperty Name="aGender" ColumnName="aGender" />
-          <ScalarProperty Name="aPhone" ColumnName="aPhone" />
           <ScalarProperty Name="aEmail" ColumnName="aEmail" />
-          <ScalarProperty Name="aAddress" ColumnName="aAddress" />
           <ScalarProperty Name="aStatus" ColumnName="aStatus" />
           <ScalarProperty Name="aDateAdded" ColumnName="aDateAdded" />
           <ScalarProperty Name="roleID" ColumnName="roleID" />
@@ -61,8 +57,8 @@
     <EntitySetMapping Name="Pictures">
       <EntityTypeMapping TypeName="TechNewsModel.Picture">
         <MappingFragment StoreEntitySet="Picture">
-          <ScalarProperty Name="pictureID" ColumnName="pictureID" />
-          <ScalarProperty Name="urlPicture" ColumnName="urlPicture" />
+          <ScalarProperty Name="picID" ColumnName="picID" />
+          <ScalarProperty Name="picURL" ColumnName="picURL" />
           <ScalarProperty Name="postID" ColumnName="postID" />
         </MappingFragment>
       </EntityTypeMapping>

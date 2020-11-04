@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,59 +21,35 @@ namespace TestProject.Forms
             btnView_Click(null, null);
             getRole();
         }
-
+     
         private void btnInsert_Click(object sender, EventArgs e)
         {
             frmInsertUser insert = new frmInsertUser();
             insert.Show();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {          
-                var data = from a in db.Accounts
-                           select new
-                           {
-                               ID = a.aID,
-                               Username = a.aUsername,
-                               Fullname = a.aFullname,
-                               Birthday = a.aBirthday,
-                               Gender = a.aGender,
-                               Phone = a.aPhone,
-                               Email = a.aEmail,
-                               Address = a.aAddress,
-                               Status = a.aStatus,
-                               DateAdd = a.aDateAdded,
-                               Role = a.Role.roleName,
-                               Country = a.Country.countryName
-                           };
-                dtTable.DataSource = data.Where(a => a.Username.Contains(txtSearch.Text)).ToList();          
-        }
-
         public void btnView_Click(object sender, EventArgs e)
         {
-                var data = (from a in db.Accounts
-                            select new
-                            {
-                                ID = a.aID,
-                                Username = a.aUsername,
-                                Fullname = a.aFullname,
-                                Birthday = a.aBirthday,
-                                Gender = a.aGender,
-                                Phone = a.aPhone,
-                                Email = a.aEmail,
-                                Address = a.aAddress,
-                                Status = a.aStatus,
-                                DateAdd = a.aDateAdded,
-                                Role = a.Role.roleName,
-                                Country = a.Country.countryName
-                            });
-                dtTable.DataSource = data.ToList();      
+            var data = (from a in db.Accounts
+                        select new
+                        {
+                            ID = a.aID,
+                            Username = a.aUsername,
+                            Fullname = a.aFullname,
+                            Email = a.aEmail,
+                            Status = (a.aStatus == 0 ) ? "Active" : "Inactive",
+                            DateAdd = a.aDateAdded,
+                            Role = a.Role.roleName,
+                            Country = a.Country.countryName
+                        });
+            dtTable.DataSource = data.ToList();
+           
         }
 
         private void getRole()
         {
-            var role = (from r in db.Accounts
-                        select new { r.roleID, r.Role.roleName }).Distinct().ToList();
+            var role = (from r in db.Roles
+                        select new { r.roleID, r.roleName }).Distinct().ToList();
             cbbRole.DataSource = role;
             cbbRole.DisplayMember = "roleName";
             cbbRole.ValueMember = "roleID";
@@ -80,27 +57,47 @@ namespace TestProject.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
 
-        int indexRow;
-      
-        private void dtTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dtTable.Rows[indexRow];
-            
-
-        }
-
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dtTable.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
             Account update = db.Accounts.Where(a => a.aID.Equals(id)).SingleOrDefault();
             update.roleID = cbbRole.SelectedIndex + 1;
-            update.aStatus = cbActive.CheckState == CheckState.Checked ? 0 : cbHidden.CheckState == CheckState.Checked ? 1 : 0;
+            update.aStatus = cbActive.CheckState == CheckState.Checked ? 0 : 1;
             db.SaveChanges();
             btnView_Click(sender, e);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            var data = from a in db.Accounts
+                       select new
+                       {
+                           ID = a.aID,
+                           Username = a.aUsername,
+                           Fullname = a.aFullname,
+                           Email = a.aEmail,
+                           Status = a.aStatus,
+                           DateAdd = a.aDateAdded,
+                           Role = a.Role.roleName,
+                           Country = a.Country.countryName
+                       };
+            dtTable.DataSource = data.Where(a => a.Username.Contains(txtSearch.Text)).ToList();
+        }
+
+        private void frmUserManagement_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dtTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbbRole.Text = dtTable.Rows[e.RowIndex].Cells["Role"].Value.ToString();         
+            string status = dtTable.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+            cbActive.CheckState =  status == "Active" ? CheckState.Checked : CheckState.Unchecked;          
         }
     }
 }

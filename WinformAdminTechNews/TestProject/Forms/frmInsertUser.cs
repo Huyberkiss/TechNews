@@ -27,12 +27,12 @@ namespace TestProject.Forms
 
         private void frmInsertUser_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void getRole()
         {
-            var role = (from r in db.Accounts
-                        select new { r.roleID, r.Role.roleName }).Distinct().ToList();
+            var role = (from r in db.Roles
+                        select new { r.roleID, r.roleName }).Distinct().ToList();
             cbbRole.DataSource = role;
             cbbRole.DisplayMember = "roleName";
             cbbRole.ValueMember = "roleID";
@@ -40,44 +40,37 @@ namespace TestProject.Forms
 
         private void getCountry()
         {
-            var country = (from c in db.Accounts
-                           where c.countryID == c.Country.countryID
-                           select new { c.countryID, c.Country.countryName }).Distinct().ToList();
+            var country = (from c in db.Countries
+                           select new { c.countryID, c.countryName }).Distinct().ToList();
             cbbCountry.DataSource = country;
             cbbCountry.ValueMember = "countryID";
             cbbCountry.DisplayMember = "countryName";
-            
+
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             
-            if ((db.Accounts.FirstOrDefault(u => u.aUsername.Equals(txtUser.Text)) as Account != null) || txtUser == null)
+            if ((db.Accounts.FirstOrDefault(u => u.aUsername.Equals(txtUser.Text)) as Account != null) || txtUser.Text == "")
             {
                 lblErrorUser.Text = "Username was existed or empty!";
                 lblErrorUser.ForeColor = Color.Red;
             }
-            else if ((db.Accounts.FirstOrDefault(a => a.aPhone.Value.ToString() == txtPhone.Text) as Account != null) || txtPhone == null)
-            {
-                lblErrorPhone.Text = "Number phone was existed or empty!";
-                lblErrorPhone.ForeColor = Color.Red;
-            }
-            else if (db.Accounts.FirstOrDefault(a => a.aEmail.Equals(txtEmail.Text)) as Account != null)
-            {
-                lblErrorEmail.Text = "Email was existed or empty!";
-                lblErrorEmail.ForeColor = Color.Red;
-            } else if(txtPass.Text == null)
+            else if (txtPass.Text == "")
             {
                 lblErrorPass.Text = "Password is not empty!";
                 lblErrorPass.ForeColor = Color.Red;
-            } else if (txtAddress == null)
-            {
-                lblErrorAddress.Text = "Address is not empty!";
-                lblErrorAddress.ForeColor = Color.Red;
-            } else if (txtFullName == null)
+            }
+            else if (txtFullName.Text == "")
             {
                 lblErrorFullName.Text = "Fullname is not empty!";
                 lblErrorFullName.ForeColor = Color.Red;
             }
+
+            else if ((db.Accounts.FirstOrDefault(a => a.aEmail.Equals(txtEmail.Text)) as Account != null) || txtEmail.Text == "")
+            {
+                lblErrorEmail.Text = "Email was existed or empty!";
+                lblErrorEmail.ForeColor = Color.Red;
+            }           
             else
             {
                 int r = 0;
@@ -94,27 +87,22 @@ namespace TestProject.Forms
                 {
                     aUsername = txtUser.Text.Trim(),
                     aPassword = Common.Encryptor.EncryptMD5(txtPass.Text).Trim(),
-                    aFullname = txtFullName.Text.Trim(),
-                    aBirthday = dateBirthday.Value,
-                    aGender = cbMale.CheckState == CheckState.Checked ? 0 : cbFemale.CheckState == CheckState.Checked ? 1 : 0,
-                    aPhone = Convert.ToInt32(txtPhone.Text),
+                    aFullname = txtFullName.Text.Trim(),               
                     aEmail = txtEmail.Text.Trim(),
-                    aAddress = txtAddress.Text.Trim(),
                     aStatus = 0,
                     aDateAdded = DateTime.Now,
                     roleID = Convert.ToInt32(r),
                     countryID = Convert.ToInt32(c)
                 });
                 db.SaveChanges();
-                Hide();
-                
+                Hide();              
             }
 
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            Regex email = new Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            Regex email = new Regex(@"^[a-zA-Z0-9]+([.-_][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.-_][a-zA-Z0-9]+)*([.-_][a-zA-Z0-9]{2,})+$");
             if (txtEmail.Text.Length > 0 && txtEmail.Text.Trim().Length != 0)
             {
                 if (!email.IsMatch(txtEmail.Text.Trim()))
@@ -126,41 +114,31 @@ namespace TestProject.Forms
             }
         }
 
-        private void txtPhone_Validating(object sender, CancelEventArgs e)
+        private void txtUser_Validating(object sender, CancelEventArgs e)
         {
-            Regex phone = new Regex(@"^([0-9]{10})$");
-            if (txtPhone.Text.Length > 0 && txtPhone.Text.Trim().Length != 0)
+            Regex username = new Regex(@"^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$");
+            if (txtUser.Text.Length > 0 && txtUser.Text.Trim().Length != 0)
             {
-                if (!phone.IsMatch(txtPhone.Text.Trim()))
+                if (!username.IsMatch(txtUser.Text.Trim()))
                 {
-                    MessageBox.Show("Please enter the correct phone is 10 digit!");
-                    txtPhone.SelectAll();
+                    MessageBox.Show("Username must be from 8 to 20 characters!");
+                    txtUser.SelectAll();
                     e.Cancel = true;
                 }
             }
         }
 
-        private void cbFemale_CheckedChanged(object sender, EventArgs e)
-        { 
-            if (cbFemale.Checked)
-            {
-                cbMale.CheckState = CheckState.Unchecked;
-            }
-            else if (cbMale.Checked)
-            {
-                cbFemale.CheckState = CheckState.Unchecked;
-            }
-        }
-
-        private void cbMale_CheckedChanged(object sender, EventArgs e)
+        private void txtPass_Validating(object sender, CancelEventArgs e)
         {
-            if (cbMale.Checked)
+            Regex password = new Regex(@"^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$");
+            if (txtPass.Text.Length > 0 && txtPass.Text.Trim().Length != 0)
             {
-                cbFemale.CheckState = CheckState.Unchecked;
-            }
-            if (cbFemale.Checked)
-            {
-                cbMale.CheckState = CheckState.Unchecked;
+                if (!password.IsMatch(txtPass.Text.Trim()))
+                {
+                    MessageBox.Show("password must be than 8 characters!");
+                    txtPass.SelectAll();
+                    e.Cancel = true;
+                }
             }
         }
     }

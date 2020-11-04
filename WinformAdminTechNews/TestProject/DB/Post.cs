@@ -24,9 +24,9 @@ namespace TestProject.DB
         public int postID { get; set; }
         public string postTitle { get; set; }
         public string postContent { get; set; }
-        public int postStatus { get; set; }
-        public int cateID { get; set; }
-        public int hID { get; set; }
+        public Nullable<int> postStatus { get; set; }
+        public Nullable<int> cateID { get; set; }
+        public Nullable<int> hID { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

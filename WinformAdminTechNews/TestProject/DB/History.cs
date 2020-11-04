@@ -27,6 +27,8 @@ namespace TestProject.DB
         public Nullable<int> censorID { get; set; }
         public Nullable<int> posterID { get; set; }
     
+        public virtual Account Account { get; set; }
+        public virtual Account Account1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Post> Posts { get; set; }
     }

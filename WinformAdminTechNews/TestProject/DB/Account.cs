@@ -18,17 +18,15 @@ namespace TestProject.DB
         public Account()
         {
             this.Comments = new HashSet<Comment>();
+            this.Histories = new HashSet<History>();
+            this.Histories1 = new HashSet<History>();
         }
     
         public int aID { get; set; }
         public string aUsername { get; set; }
         public string aPassword { get; set; }
         public string aFullname { get; set; }
-        public Nullable<System.DateTime> aBirthday { get; set; }
-        public Nullable<int> aGender { get; set; }
-        public Nullable<int> aPhone { get; set; }
         public string aEmail { get; set; }
-        public string aAddress { get; set; }
         public Nullable<int> aStatus { get; set; }
         public Nullable<System.DateTime> aDateAdded { get; set; }
         public Nullable<int> roleID { get; set; }
@@ -38,7 +36,9 @@ namespace TestProject.DB
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual Account Account1 { get; set; }
-        public virtual Account Account2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<History> Histories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<History> Histories1 { get; set; }
     }
 }
