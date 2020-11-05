@@ -22,6 +22,9 @@
         <AssociationConnector Association="TechNewsModel.FK__Comment__postID__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Post__hID__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Picture__postID__35BCFE0A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TechNewsModel.Statuss" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TechNewsModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="TechNewsModel.FK__Post__statusID__6E01572D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

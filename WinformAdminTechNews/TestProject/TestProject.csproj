@@ -36,7 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TestProject.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -130,17 +131,23 @@
     <Compile Include="Forms\Form_Dashboard.Designer.cs">
       <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPostManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmPostManagement.Designer.cs">
       <DependentUpon>frmPostManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmUserManagement.cs">
+    <Compile Include="Forms\frmViewDetailss.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmUserManagement.Designer.cs">
-      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    <Compile Include="Forms\frmViewDetailss.Designer.cs">
+      <DependentUpon>frmViewDetailss.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,11 +160,14 @@
     <EmbeddedResource Include="Forms\Form_Dashboard.resx">
       <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUserManagement.resx">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPostManagement.resx">
       <DependentUpon>frmPostManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmUserManagement.resx">
-      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmViewDetailss.resx">
+      <DependentUpon>frmViewDetailss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

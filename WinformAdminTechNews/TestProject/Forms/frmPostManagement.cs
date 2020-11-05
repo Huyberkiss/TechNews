@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DevExpress.Data.ODataLinq.Helpers;
+using DevExpress.Utils.Extensions;
+using DevExpress.XtraEditors.Controls;
+using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +12,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestProject.DB;
-
 namespace TestProject.Forms
 {
     public partial class frmPostManagement : Form
@@ -18,17 +21,78 @@ namespace TestProject.Forms
         {
             InitializeComponent();
             loadData();
-        }
 
-        public void loadData() {
-            var listData = from c in DBTechNews.Posts select new { PostID = c.postID, postTitle = c.postTitle, postContent = c.postContent, postStatus = c.postStatus, cateID = c.Category.cateName, hID = c.History.dateAccepted };
-            //var listData = from c in DBTechNews.Posts select new { PostID = c.postID, postTitle = c.postTitle, postContent = c.postContent};
+        }
+        void bindingData()
+        {
+            txtAuthor.DataBindings.Clear();
+            txtAuthor.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Author", true, DataSourceUpdateMode.Never));
+            cbboxStatus.DataBindings.Clear();
+            cbboxStatus.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Status", true, DataSourceUpdateMode.Never));
+        }
+        public void loadData()
+        {
+            var listData = from c in DBTechNews.Posts
+                            join b in DBTechNews.Histories 
+                            on c.hID equals b.hID
+                            select new { PostID = c.postID, PostTitle = c.postTitle, Author = b.posterID, PostContent = c.postContent, Status = c.postStatus , cateID = c.Category.cateName, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
             dataGView.DataSource = listData.ToList();
+           
         }
 
         private void frmPostManagement_Load(object sender, EventArgs e)
+        { 
+            loadData();
+            bindingData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGView.SelectedCells[0].OwningRow.Cells["PostID"].Value.ToString());
+
+            frmViewDetailss frmView = new frmViewDetailss(id);
+            frmView.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             loadData();
+            bindingData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGView.SelectedCells[0].OwningRow.Cells["PostID"].Value.ToString());
+            int status = -1;
+            //ComboBoxItem typeItem = (ComboBoxItem)cbboxStatus.SelectedItem;
+            string value = cbboxStatus.Text;
+            if (value == "Active") {
+                status = 0;
+            }
+            else {
+                status = 1;
+            }
+            Post post = DBTechNews.Posts.Find(id);
+            post.postStatus = status;
+            DBTechNews.SaveChanges();
+            loadData();
+            bindingData();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadData();
+            string textSeach = txtSearch.Text.ToString();
+            var dataSearch = from c in DBTechNews.Posts
+                             join b in DBTechNews.Histories
+                             on c.hID equals b.hID
+                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = b.posterID , PostContent = c.postContent, Status = c.postStatus,  cateID = c.Category.cateName, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+            dataGView.DataSource = dataSearch.ToList();
         }
     }
 }

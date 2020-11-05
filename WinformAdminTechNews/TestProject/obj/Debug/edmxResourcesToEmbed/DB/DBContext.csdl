@@ -83,6 +83,8 @@
     <NavigationProperty Name="Comments" Relationship="Self.FK__Comment__postID__398D8EEE" FromRole="Post" ToRole="Comment" />
     <NavigationProperty Name="History" Relationship="Self.FK__Post__hID__32E0915F" FromRole="Post" ToRole="History" />
     <NavigationProperty Name="Pictures" Relationship="Self.FK__Picture__postID__35BCFE0A" FromRole="Post" ToRole="Picture" />
+    <Property Name="statusID" Type="Int32" />
+    <NavigationProperty Name="Statuss" Relationship="TechNewsModel.FK__Post__statusID__6E01572D" FromRole="Post" ToRole="Statuss" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -245,5 +247,41 @@
       <End Role="Post" EntitySet="Posts" />
       <End Role="Picture" EntitySet="Pictures" />
     </AssociationSet>
+    <EntitySet Name="Statusses" EntityType="TechNewsModel.Statuss" />
+    <EntitySet Name="sysdiagrams" EntityType="TechNewsModel.sysdiagram" />
+    <AssociationSet Name="FK__Post__statusID__6E01572D" Association="TechNewsModel.FK__Post__statusID__6E01572D">
+      <End Role="Statuss" EntitySet="Statusses" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Statuss">
+    <Key>
+      <PropertyRef Name="statusID" />
+    </Key>
+    <Property Name="statusID" Type="Int32" Nullable="false" />
+    <Property Name="statusName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="TechNewsModel.FK__Post__statusID__6E01572D" FromRole="Statuss" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Post__statusID__6E01572D">
+    <End Type="TechNewsModel.Statuss" Role="Statuss" Multiplicity="0..1" />
+    <End Type="TechNewsModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuss">
+        <PropertyRef Name="statusID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
