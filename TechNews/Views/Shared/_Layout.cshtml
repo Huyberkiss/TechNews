@@ -42,7 +42,7 @@
 
                 <ul class="nav navbar-nav navbar-right ml-auto p-1">
                     @if (Session["user_id"] == null) {
-                        <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
+                        <li class="nav-item"><a href="/Authentication/Register" id="registerLink" class="nav-link">Register</a></li>
                         <li class="nav-item"><a href="/Authentication" id="loginLink" class="nav-link">Log in</a></li>
                     }
                     else {
