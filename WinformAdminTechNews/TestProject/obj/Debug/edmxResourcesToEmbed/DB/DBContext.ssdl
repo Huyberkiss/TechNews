@@ -63,9 +63,9 @@
     <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="postTitle" Type="varchar" MaxLength="255" />
     <Property Name="postContent" Type="text" />
+    <Property Name="postStatus" Type="int" />
     <Property Name="cateID" Type="int" />
     <Property Name="hID" Type="int" />
-    <Property Name="postStatus" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -73,16 +73,6 @@
     </Key>
     <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roleName" Type="varchar" MaxLength="30" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK__Account__country__29572725">
     <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
@@ -201,7 +191,6 @@
     <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Account__country__29572725" Association="Self.FK__Account__country__29572725">
       <End Role="Country" EntitySet="Country" />
       <End Role="Account" EntitySet="Account" />

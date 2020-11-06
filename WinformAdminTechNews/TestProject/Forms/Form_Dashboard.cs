@@ -19,13 +19,13 @@ namespace TestProject.Forms
 
         private void button10_Click(object sender, EventArgs e)
         {
+            new frmLogin().Show();
             this.Dispose();
         }
 
         private void btnAccountManagement_Click(object sender, EventArgs e)
         {
             frmUserManagement um = new frmUserManagement();
-
             um.Show();
             Hide();
 

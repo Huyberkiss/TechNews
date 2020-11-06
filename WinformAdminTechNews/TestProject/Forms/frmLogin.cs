@@ -19,7 +19,7 @@ namespace TestProject
     public partial class frmLogin : Form
     {
         TechNewsEntities db = new TechNewsEntities();
-        //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-GK1DSIU;Initial Catalog=TechNews;Integrated Security=True");
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -67,29 +67,8 @@ namespace TestProject
                 MessageBox.Show("Username and password is incorrect!!!");
                 txtPassword.Text = "";
             }
-            //SqlDataAdapter sda = new SqlDataAdapter("select roleID from Account where aUsername='" + txtUsername.Text + "' and aPassword='"+ Encryptor.EncryptMD5(txtPassword.Text) +"'", conn);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
-            //if(dt.Rows.Count == 1)
-            //{
-            //    int role = Convert.ToInt32(dt.Rows[0]["roleID"].ToString());
-            //    if(role == 1)
-            //    {
-            //        Form_Dashboard fd = new Form_Dashboard();
-            //        fd.Show();
-            //        txtUsername.Text = "";
-            //        txtPassword.Text = "";
-            //    } else
-            //    {
-            //        MessageBox.Show("Only Admin Login!!!");
-            //        txtUsername.Text = "";
-            //        txtPassword.Text = "";
-            //    }
-            //} else
-            //{
-            //    MessageBox.Show("Username and password is incorrect!!!");
-            //}
-            //this.Hide();
+
+            this.Hide();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

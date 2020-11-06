@@ -1,6 +1,4 @@
-﻿using DevExpress.Data.ODataLinq.Helpers;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraEditors.Controls;
+﻿
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;

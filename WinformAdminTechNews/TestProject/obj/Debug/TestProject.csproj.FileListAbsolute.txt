@@ -194,3 +194,4 @@ D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\De
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmPostManagement.resources
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources
+C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources

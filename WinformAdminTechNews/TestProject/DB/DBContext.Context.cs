@@ -33,6 +33,5 @@ namespace TestProject.DB
         public virtual DbSet<Picture> Pictures { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

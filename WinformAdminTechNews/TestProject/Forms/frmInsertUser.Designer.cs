@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInsertUser));
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -48,38 +48,36 @@
             this.lblErrorPass = new System.Windows.Forms.Label();
             this.lblErrorFullName = new System.Windows.Forms.Label();
             this.lblErrorEmail = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitle
             // 
-            this.pnlTitle.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlTitle.BackColor = System.Drawing.Color.Black;
+            this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTitle.Controls.Add(this.btnExit);
+            this.pnlTitle.Controls.Add(this.pictureBox1);
             this.pnlTitle.Controls.Add(this.lblTitle);
-            this.pnlTitle.Controls.Add(this.button1);
-            this.pnlTitle.Location = new System.Drawing.Point(0, 1);
+            this.pnlTitle.Location = new System.Drawing.Point(-2, -2);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(800, 98);
+            this.pnlTitle.Size = new System.Drawing.Size(806, 121);
             this.pnlTitle.TabIndex = 0;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(288, 21);
+            this.lblTitle.BackColor = System.Drawing.Color.Black;
+            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
+            this.lblTitle.Location = new System.Drawing.Point(233, 33);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(224, 48);
+            this.lblTitle.Size = new System.Drawing.Size(331, 41);
             this.lblTitle.TabIndex = 2;
-            this.lblTitle.Text = "Insert User";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::TestProject.Properties.Resources.user;
-            this.button1.Location = new System.Drawing.Point(86, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 69);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblTitle.Text = "Create New Account";
             // 
             // lblUsername
             // 
@@ -230,6 +228,28 @@
             this.lblErrorEmail.TabIndex = 31;
             this.lblErrorEmail.Text = " ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(24, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(107, 108);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(691, 29);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(86, 60);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmInsertUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,12 +273,14 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.pnlTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInsertUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInsertUser";
             this.Load += new System.EventHandler(this.frmInsertUser_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,7 +289,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTitle;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
@@ -286,5 +307,7 @@
         private System.Windows.Forms.Label lblErrorPass;
         private System.Windows.Forms.Label lblErrorFullName;
         private System.Windows.Forms.Label lblErrorEmail;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExit;
     }
 }

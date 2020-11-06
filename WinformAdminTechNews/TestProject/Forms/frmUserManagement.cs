@@ -20,13 +20,16 @@ namespace TestProject.Forms
             InitializeComponent();
             showData();
             getRole();
+            TimeUpdater();
         }
      
       
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            
             frmInsertUser insert = new frmInsertUser();
             insert.Show();
+            this.Hide();
         }
     
         public void showData()
@@ -54,14 +57,6 @@ namespace TestProject.Forms
             cbbRole.DisplayMember = "roleName";
             cbbRole.ValueMember = "roleID";
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-
-            new Form_Dashboard().Show();
-            this.Dispose();
-        }
-
         
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -102,6 +97,21 @@ namespace TestProject.Forms
                 MessageBox.Show("Don't click title!");
             }
                    
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            new Form_Dashboard().Show();
+            this.Dispose();
+        }
+
+        async void TimeUpdater()
+        {
+            while (true)
+            {
+                lblTime.Text = DateTime.Now.ToString("hh:mm:ss");
+                await Task.Delay(1000);
+            }
         }
     }
 }
