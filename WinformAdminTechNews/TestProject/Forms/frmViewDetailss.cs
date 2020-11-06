@@ -26,16 +26,16 @@ namespace TestProject.Forms
         }
 
         public void sizeFrame() {
-            this.Size = new Size(650, 650);
-           
+            this.Size = new Size(650, 700);
+
             int width = this.Width;
             int height = this.Height;
 
-            gBContainer.Width = width-35;
+            gBContainer.Width = width-20;
             gBContainer.Height = height - 70;
             
             txtContainer.Width = gBContainer.Width - 10;
-            txtContainer.Height = gBContainer.Height-30;
+            txtContainer.Height = gBContainer.Height-250;
             
         }
         public void showData(int id) {
@@ -54,6 +54,11 @@ namespace TestProject.Forms
         private void frmViewDetails_Load(object sender, EventArgs e)
         {
             sizeFrame();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

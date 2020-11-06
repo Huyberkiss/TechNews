@@ -27,14 +27,19 @@ namespace TestProject.Forms
         {
             txtAuthor.DataBindings.Clear();
             txtAuthor.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Author", true, DataSourceUpdateMode.Never));
-            //cbboxStatus.DataBindings.Clear();
-            //cbboxStatus.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Status", true, DataSourceUpdateMode.Never));
+            cbboxStatus.DataBindings.Clear();
+            cbboxStatus.DataBindings.Add(new Binding("Text", dataGView.DataSource, "StatusID", true, DataSourceUpdateMode.Never));
+
+            
         }
         public void loadData()
         {
             var listData = from c in DBTechNews.Posts
-
-                           select new { PostID = c.postID, PostTitle = c.postTitle, Author = c.postID, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = c.postStatus, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+                           join b in DBTechNews.Histories
+                           on c.hID equals b.hID
+                           join a in DBTechNews.Accounts
+                           on b.posterID equals a.aID
+                           select new { PostID = c.postID, PostTitle = c.postTitle, Author = a.aFullname, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = (c.postStatus == 0) ? "Active" : "Inactive", HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
             dataGView.DataSource = listData.ToList();
 
         }
@@ -90,7 +95,12 @@ namespace TestProject.Forms
             loadData();
             string textSeach = txtSearch.Text.ToString();
             var dataSearch = from c in DBTechNews.Posts
-                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = c.postID, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = c.postStatus, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+                             join b in DBTechNews.Histories
+                                on c.hID equals b.hID
+                             join a in DBTechNews.Accounts
+                             on b.posterID equals a.aID
+                             where c.postTitle.Contains(textSeach)
+                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = a.aFullname, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = (c.postStatus == 0) ? "Active" : "Inactive", HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
             dataGView.DataSource = dataSearch.ToList();
         }
     }
