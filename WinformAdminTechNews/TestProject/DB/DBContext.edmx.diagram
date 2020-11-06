@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="97c852ca9e2143059019f17b52c69e66" Name="Diagram1">
+      <Diagram DiagramId="9b5e0ab51ae144a297f198e8661de0d5" Name="Diagram1">
         <EntityTypeShape EntityType="TechNewsModel.Account" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Category" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Comment" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="TechNewsModel.Picture" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Post" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
         <AssociationConnector Association="TechNewsModel.FK__Account__country__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Account__roleID__286302EC" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Comment__aID__38996AB5" ManuallyRouted="false" />
@@ -22,9 +23,6 @@
         <AssociationConnector Association="TechNewsModel.FK__Comment__postID__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Post__hID__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Picture__postID__35BCFE0A" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TechNewsModel.Statuss" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="TechNewsModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" />
-        <AssociationConnector Association="TechNewsModel.FK__Post__statusID__6E01572D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

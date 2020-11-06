@@ -65,7 +65,7 @@
     <Property Name="postContent" Type="text" />
     <Property Name="cateID" Type="int" />
     <Property Name="hID" Type="int" />
-    <Property Name="statusID" Type="int" />
+    <Property Name="postStatus" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -73,13 +73,6 @@
     </Key>
     <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roleName" Type="varchar" MaxLength="30" />
-  </EntityType>
-  <EntityType Name="Statuss">
-    <Key>
-      <PropertyRef Name="statusID" />
-    </Key>
-    <Property Name="statusID" Type="int" Nullable="false" />
-    <Property Name="statusName" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -199,18 +192,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Post__statusID__6E01572D">
-    <End Role="Statuss" Type="Self.Statuss" Multiplicity="0..1" />
-    <End Role="Post" Type="Self.Post" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Statuss">
-        <PropertyRef Name="statusID" />
-      </Principal>
-      <Dependent Role="Post">
-        <PropertyRef Name="statusID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="TechNewsModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -220,7 +201,6 @@
     <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Statuss" EntityType="Self.Statuss" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Account__country__29572725" Association="Self.FK__Account__country__29572725">
       <End Role="Country" EntitySet="Country" />
@@ -256,10 +236,6 @@
     </AssociationSet>
     <AssociationSet Name="FK__Post__hID__32E0915F" Association="Self.FK__Post__hID__32E0915F">
       <End Role="History" EntitySet="History" />
-      <End Role="Post" EntitySet="Post" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Post__statusID__6E01572D" Association="Self.FK__Post__statusID__6E01572D">
-      <End Role="Statuss" EntitySet="Statuss" />
       <End Role="Post" EntitySet="Post" />
     </AssociationSet>
   </EntityContainer>

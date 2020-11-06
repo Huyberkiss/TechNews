@@ -75,43 +75,46 @@
   <ItemGroup>
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="DB\Account.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Category.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Comment.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Country.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\DbContext.Context.cs">
+    <Compile Include="DB\DBContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.Context.tt</DependentUpon>
+      <DependentUpon>DBContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\DbContext.cs">
+    <Compile Include="DB\DBContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\DbContext.Designer.cs">
+    <Compile Include="DB\DBContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.edmx</DependentUpon>
+      <DependentUpon>DBContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB\History.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Picture.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Post.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Role.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sysdiagram.cs">
+      <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInsertUser.cs">
       <SubType>Form</SubType>
@@ -180,12 +183,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DB\DbContext.edmx">
+    <EntityDeploy Include="DB\DBContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB\DbContext.edmx.diagram">
-      <DependentUpon>DbContext.edmx</DependentUpon>
+    <None Include="DB\DBContext.edmx.diagram">
+      <DependentUpon>DBContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -202,15 +205,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\DbContext.Context.tt">
+    <Content Include="DB\DBContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbContext.edmx</DependentUpon>
-      <LastGenOutput>DbContext.Context.cs</LastGenOutput>
+      <DependentUpon>DBContext.edmx</DependentUpon>
+      <LastGenOutput>DBContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\DbContext.tt">
+    <Content Include="DB\DBContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbContext.edmx</DependentUpon>
-      <LastGenOutput>DbContext.cs</LastGenOutput>
+      <DependentUpon>DBContext.edmx</DependentUpon>
+      <LastGenOutput>DBContext.cs</LastGenOutput>
     </Content>
     <Content Include="img\Icon.jpg" />
     <None Include="Resources\user.png" />

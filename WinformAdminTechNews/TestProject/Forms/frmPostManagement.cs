@@ -27,21 +27,20 @@ namespace TestProject.Forms
         {
             txtAuthor.DataBindings.Clear();
             txtAuthor.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Author", true, DataSourceUpdateMode.Never));
-            cbboxStatus.DataBindings.Clear();
-            cbboxStatus.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Status", true, DataSourceUpdateMode.Never));
+            //cbboxStatus.DataBindings.Clear();
+            //cbboxStatus.DataBindings.Add(new Binding("Text", dataGView.DataSource, "Status", true, DataSourceUpdateMode.Never));
         }
         public void loadData()
         {
             var listData = from c in DBTechNews.Posts
-                            join b in DBTechNews.Histories 
-                            on c.hID equals b.hID
-                            select new { PostID = c.postID, PostTitle = c.postTitle, Author = b.posterID, PostContent = c.postContent, Status = c.postStatus , cateID = c.Category.cateName, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+
+                           select new { PostID = c.postID, PostTitle = c.postTitle, Author = c.postID, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = c.postStatus, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
             dataGView.DataSource = listData.ToList();
-           
+
         }
 
         private void frmPostManagement_Load(object sender, EventArgs e)
-        { 
+        {
             loadData();
             bindingData();
         }
@@ -71,10 +70,12 @@ namespace TestProject.Forms
             int status = -1;
             //ComboBoxItem typeItem = (ComboBoxItem)cbboxStatus.SelectedItem;
             string value = cbboxStatus.Text;
-            if (value == "Active") {
+            if (value == "Active")
+            {
                 status = 0;
             }
-            else {
+            else
+            {
                 status = 1;
             }
             Post post = DBTechNews.Posts.Find(id);
@@ -89,9 +90,7 @@ namespace TestProject.Forms
             loadData();
             string textSeach = txtSearch.Text.ToString();
             var dataSearch = from c in DBTechNews.Posts
-                             join b in DBTechNews.Histories
-                             on c.hID equals b.hID
-                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = b.posterID , PostContent = c.postContent, Status = c.postStatus,  cateID = c.Category.cateName, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = c.postID, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = c.postStatus, HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
             dataGView.DataSource = dataSearch.ToList();
         }
     }

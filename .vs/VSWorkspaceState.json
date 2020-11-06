@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\TechNews",
-    "\\TechNews\\Controllers"
+    "\\TechNews\\Controllers",
+    "\\WinformAdminTechNews",
+    "\\WinformAdminTechNews\\TestProject",
+    "\\WinformAdminTechNews\\TestProject\\Forms"
   ],
-  "SelectedNode": "\\TechNews.sln",
+  "SelectedNode": "\\WinformAdminTechNews\\TestProject.sln",
   "PreviewInSolutionExplorer": false
 }

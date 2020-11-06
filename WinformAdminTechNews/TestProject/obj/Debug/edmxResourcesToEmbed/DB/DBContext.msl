@@ -66,12 +66,12 @@
     <EntitySetMapping Name="Posts">
       <EntityTypeMapping TypeName="TechNewsModel.Post">
         <MappingFragment StoreEntitySet="Post">
-          <ScalarProperty Name="statusID" ColumnName="statusID" />
           <ScalarProperty Name="postID" ColumnName="postID" />
           <ScalarProperty Name="postTitle" ColumnName="postTitle" />
           <ScalarProperty Name="postContent" ColumnName="postContent" />
           <ScalarProperty Name="cateID" ColumnName="cateID" />
           <ScalarProperty Name="hID" ColumnName="hID" />
+          <ScalarProperty Name="postStatus" ColumnName="postStatus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -83,22 +83,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Statusses">
-      <EntityTypeMapping TypeName="TechNewsModel.Statuss">
-        <MappingFragment StoreEntitySet="Statuss">
-          <ScalarProperty Name="statusName" ColumnName="statusName" />
-          <ScalarProperty Name="statusID" ColumnName="statusID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="TechNewsModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
           <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
