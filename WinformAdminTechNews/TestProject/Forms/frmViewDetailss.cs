@@ -39,13 +39,15 @@ namespace TestProject.Forms
             
         }
         public void showData(int id) {
-            var list = DBTechNews.Posts.FirstOrDefault(p => p.postID==id);
-            if (list != null) {
-                lblTitle.Text = list.postTitle;
-                lblAuthors.Text = list.postID.ToString();
-                lblDateUpload.Text = list.History.dateAccepted.ToString();
-                lblCategogy.Text = list.Category.cateName.ToString();
-                txtContainer.Text = list.postContent.ToString();
+            var listPost = DBTechNews.Posts.FirstOrDefault(p => p.postID==id);
+            var listHistory = DBTechNews.Histories.Find(listPost.postID);
+            var listAccount = DBTechNews.Accounts.Find(listHistory.posterID);
+            if (listPost != null) {
+                lblTitle.Text = listPost.postTitle;
+                lblAuthors.Text = listAccount.aFullname.ToString();
+                lblDateUpload.Text = listHistory.dateAccepted.ToString();
+                lblCategogy.Text = listPost.Category.cateName.ToString();
+                txtContainer.Text = listPost.postContent.ToString();
                 //string date = DBTechNews.Histories.FirstOrDefault(c => c.dateAccepted);
                 //lblDateUpload.Text = ;
             }

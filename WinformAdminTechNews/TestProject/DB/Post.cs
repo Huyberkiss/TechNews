@@ -18,20 +18,23 @@ namespace TestProject.DB
         public Post()
         {
             this.Comments = new HashSet<Comment>();
+            this.Histories = new HashSet<History>();
             this.Pictures = new HashSet<Picture>();
         }
     
         public int postID { get; set; }
+        public Nullable<int> posterID { get; set; }
         public string postTitle { get; set; }
         public string postContent { get; set; }
         public Nullable<int> postStatus { get; set; }
         public Nullable<int> cateID { get; set; }
-        public Nullable<int> hID { get; set; }
     
+        public virtual Account Account { get; set; }
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual History History { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<History> Histories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Picture> Pictures { get; set; }
     }

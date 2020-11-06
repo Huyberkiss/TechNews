@@ -47,6 +47,7 @@
     <Property Name="typeAccept" Type="int" />
     <Property Name="censorID" Type="int" />
     <Property Name="posterID" Type="int" />
+    <Property Name="postID" Type="int" />
   </EntityType>
   <EntityType Name="Picture">
     <Key>
@@ -61,11 +62,11 @@
       <PropertyRef Name="postID" />
     </Key>
     <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="posterID" Type="int" />
     <Property Name="postTitle" Type="varchar" MaxLength="255" />
     <Property Name="postContent" Type="text" />
     <Property Name="postStatus" Type="int" />
     <Property Name="cateID" Type="int" />
-    <Property Name="hID" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -98,7 +99,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Comment__aID__38996AB5">
+  <Association Name="FK__Comment__aID__398D8EEE">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -110,7 +111,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Comment__postID__398D8EEE">
+  <Association Name="FK__Comment__postID__3A81B327">
     <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
     <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,7 +123,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__History__censorI__2C3393D0">
+  <Association Name="FK__History__censorI__31EC6D26">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="History" Type="Self.History" Multiplicity="*" />
     <ReferentialConstraint>
@@ -134,7 +135,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__History__posterI__2D27B809">
+  <Association Name="FK__History__posterI__32E0915F">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="History" Type="Self.History" Multiplicity="*" />
     <ReferentialConstraint>
@@ -146,7 +147,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Picture__postID__35BCFE0A">
+  <Association Name="FK__History__postID__33D4B598">
+    <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+    <End Role="History" Type="Self.History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="postID" />
+      </Principal>
+      <Dependent Role="History">
+        <PropertyRef Name="postID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Picture__postID__36B12243">
     <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
     <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
     <ReferentialConstraint>
@@ -158,7 +171,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Post__cateID__31EC6D26">
+  <Association Name="FK__Post__cateID__2F10007B">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
     <End Role="Post" Type="Self.Post" Multiplicity="*" />
     <ReferentialConstraint>
@@ -170,15 +183,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Post__hID__32E0915F">
-    <End Role="History" Type="Self.History" Multiplicity="0..1" />
+  <Association Name="FK__Post__posterID__2E1BDC42">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="Post" Type="Self.Post" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="History">
-        <PropertyRef Name="hID" />
+      <Principal Role="Account">
+        <PropertyRef Name="aID" />
       </Principal>
       <Dependent Role="Post">
-        <PropertyRef Name="hID" />
+        <PropertyRef Name="posterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -199,32 +212,36 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="Account" EntitySet="Account" />
     </AssociationSet>
-    <AssociationSet Name="FK__Comment__aID__38996AB5" Association="Self.FK__Comment__aID__38996AB5">
+    <AssociationSet Name="FK__Comment__aID__398D8EEE" Association="Self.FK__Comment__aID__398D8EEE">
       <End Role="Account" EntitySet="Account" />
       <End Role="Comment" EntitySet="Comment" />
     </AssociationSet>
-    <AssociationSet Name="FK__Comment__postID__398D8EEE" Association="Self.FK__Comment__postID__398D8EEE">
+    <AssociationSet Name="FK__Comment__postID__3A81B327" Association="Self.FK__Comment__postID__3A81B327">
       <End Role="Post" EntitySet="Post" />
       <End Role="Comment" EntitySet="Comment" />
     </AssociationSet>
-    <AssociationSet Name="FK__History__censorI__2C3393D0" Association="Self.FK__History__censorI__2C3393D0">
+    <AssociationSet Name="FK__History__censorI__31EC6D26" Association="Self.FK__History__censorI__31EC6D26">
       <End Role="Account" EntitySet="Account" />
       <End Role="History" EntitySet="History" />
     </AssociationSet>
-    <AssociationSet Name="FK__History__posterI__2D27B809" Association="Self.FK__History__posterI__2D27B809">
+    <AssociationSet Name="FK__History__posterI__32E0915F" Association="Self.FK__History__posterI__32E0915F">
       <End Role="Account" EntitySet="Account" />
       <End Role="History" EntitySet="History" />
     </AssociationSet>
-    <AssociationSet Name="FK__Picture__postID__35BCFE0A" Association="Self.FK__Picture__postID__35BCFE0A">
+    <AssociationSet Name="FK__History__postID__33D4B598" Association="Self.FK__History__postID__33D4B598">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="History" EntitySet="History" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Picture__postID__36B12243" Association="Self.FK__Picture__postID__36B12243">
       <End Role="Post" EntitySet="Post" />
       <End Role="Picture" EntitySet="Picture" />
     </AssociationSet>
-    <AssociationSet Name="FK__Post__cateID__31EC6D26" Association="Self.FK__Post__cateID__31EC6D26">
+    <AssociationSet Name="FK__Post__cateID__2F10007B" Association="Self.FK__Post__cateID__2F10007B">
       <End Role="Category" EntitySet="Category" />
       <End Role="Post" EntitySet="Post" />
     </AssociationSet>
-    <AssociationSet Name="FK__Post__hID__32E0915F" Association="Self.FK__Post__hID__32E0915F">
-      <End Role="History" EntitySet="History" />
+    <AssociationSet Name="FK__Post__posterID__2E1BDC42" Association="Self.FK__Post__posterID__2E1BDC42">
+      <End Role="Account" EntitySet="Account" />
       <End Role="Post" EntitySet="Post" />
     </AssociationSet>
   </EntityContainer>

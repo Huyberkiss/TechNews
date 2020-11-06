@@ -4,24 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4ece530780f0497e87dc0e466b7e10d3" Name="Diagram1">
-        <EntityTypeShape EntityType="TechNewsModel.Account" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Category" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Comment" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Country" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.History" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Picture" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Post" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="d9a88ac2213f4bd9b2672e415b3910e3" Name="Diagram1">
+        <EntityTypeShape EntityType="TechNewsModel.Account" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Category" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Comment" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Country" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.History" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Picture" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Post" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Role" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <AssociationConnector Association="TechNewsModel.FK__Account__country__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="TechNewsModel.FK__Account__roleID__286302EC" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__Comment__aID__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__History__censorI__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__History__posterI__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__Post__cateID__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__Comment__postID__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__Post__hID__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="TechNewsModel.FK__Picture__postID__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__Comment__aID__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__History__censorI__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__History__posterI__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__Post__posterID__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__Post__cateID__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__Comment__postID__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__History__postID__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="TechNewsModel.FK__Picture__postID__36B12243" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

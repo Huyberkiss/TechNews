@@ -51,6 +51,7 @@
           <ScalarProperty Name="typeAccept" ColumnName="typeAccept" />
           <ScalarProperty Name="censorID" ColumnName="censorID" />
           <ScalarProperty Name="posterID" ColumnName="posterID" />
+          <ScalarProperty Name="postID" ColumnName="postID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -67,11 +68,11 @@
       <EntityTypeMapping TypeName="TechNewsModel.Post">
         <MappingFragment StoreEntitySet="Post">
           <ScalarProperty Name="postID" ColumnName="postID" />
+          <ScalarProperty Name="posterID" ColumnName="posterID" />
           <ScalarProperty Name="postTitle" ColumnName="postTitle" />
           <ScalarProperty Name="postContent" ColumnName="postContent" />
           <ScalarProperty Name="postStatus" ColumnName="postStatus" />
           <ScalarProperty Name="cateID" ColumnName="cateID" />
-          <ScalarProperty Name="hID" ColumnName="hID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

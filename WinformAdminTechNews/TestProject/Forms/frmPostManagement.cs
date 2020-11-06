@@ -34,10 +34,10 @@ namespace TestProject.Forms
         {
             var listData = from c in DBTechNews.Posts
                            join b in DBTechNews.Histories
-                           on c.hID equals b.hID
+                           on c.postID equals b.postID
                            join a in DBTechNews.Accounts
                            on b.posterID equals a.aID
-                           select new { PostID = c.postID, PostTitle = c.postTitle, Author = a.aFullname, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = (c.postStatus == 0) ? "Active" : "Inactive", HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+                           select new { PostID =  b.postID, PostTitle = c.postTitle, Author = a.aFullname, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = (c.postStatus == 0) ? "Active" : "Inactive", HistoryAccepted = b.dateAccepted, HistorySubmit = b.dateSubmited };
             dataGView.DataSource = listData.ToList();
 
         }
@@ -94,11 +94,11 @@ namespace TestProject.Forms
             string textSeach = txtSearch.Text.ToString();
             var dataSearch = from c in DBTechNews.Posts
                              join b in DBTechNews.Histories
-                                on c.hID equals b.hID
+                                on c.postID equals b.postID
                              join a in DBTechNews.Accounts
                              on b.posterID equals a.aID
                              where c.postTitle.Contains(textSeach)
-                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = a.aFullname, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = (c.postStatus == 0) ? "Active" : "Inactive", HistoryAccepted = c.History.dateAccepted, HistorySubmit = c.History.dateSubmited };
+                             select new { PostID = c.postID, PostTitle = c.postTitle, Author = a.aFullname, PostContent = c.postContent, cateID = c.Category.cateName, StatusID = (c.postStatus == 0) ? "Active" : "Inactive", HistoryAccepted = b.dateAccepted, HistorySubmit = b.dateSubmited };
             dataGView.DataSource = dataSearch.ToList();
         }
     }
