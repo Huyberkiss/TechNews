@@ -20,6 +20,7 @@ namespace TechNews.DB
             this.Comments = new HashSet<Comment>();
             this.Histories = new HashSet<History>();
             this.Histories1 = new HashSet<History>();
+            this.Posts = new HashSet<Post>();
         }
     
         public int aID { get; set; }
@@ -40,5 +41,7 @@ namespace TechNews.DB
         public virtual ICollection<History> Histories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<History> Histories1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Post> Posts { get; set; }
     }
 }

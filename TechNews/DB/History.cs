@@ -14,22 +14,16 @@ namespace TechNews.DB
     
     public partial class History
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public History()
-        {
-            this.Posts = new HashSet<Post>();
-        }
-    
         public int hID { get; set; }
         public Nullable<System.DateTime> dateSubmited { get; set; }
         public Nullable<System.DateTime> dateAccepted { get; set; }
         public Nullable<int> typeAccept { get; set; }
         public Nullable<int> censorID { get; set; }
         public Nullable<int> posterID { get; set; }
+        public Nullable<int> postID { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual Account Account1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual Post Post { get; set; }
     }
 }

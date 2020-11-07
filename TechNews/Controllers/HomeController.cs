@@ -20,7 +20,7 @@ namespace TechNews.Controllers {
         public ActionResult Index() {
 
             var Posts = (from post in _dbContext.Posts
-                         join history in _dbContext.Histories on post.hID equals history.hID
+                         join history in _dbContext.Histories on post.postID equals history.postID
                          join user in _dbContext.Accounts on history.posterID equals user.aID
                          join cate in _dbContext.Categories on post.cateID equals cate.cateID
 
