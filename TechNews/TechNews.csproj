@@ -127,21 +127,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AuthenticationController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="DB\Account.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Advertisement.cs">
+      <DependentUpon>DBConnection.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DB\Category.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Comment.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="DB\Country.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
@@ -160,6 +163,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBConnection.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="DB\History.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
@@ -169,13 +175,10 @@
     <Compile Include="DB\Post.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DB\Role.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

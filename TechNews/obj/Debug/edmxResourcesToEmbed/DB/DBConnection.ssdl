@@ -14,6 +14,14 @@
     <Property Name="roleID" Type="int" />
     <Property Name="countryID" Type="int" />
   </EntityType>
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="advID" />
+    </Key>
+    <Property Name="advID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="advImage" Type="varchar" MaxLength="100" />
+    <Property Name="advUrl" Type="varchar" MaxLength="200" />
+  </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="cateID" />
@@ -75,7 +83,7 @@
     <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roleName" Type="varchar" MaxLength="30" />
   </EntityType>
-  <Association Name="FK__Account__country__29572725">
+  <Association Name="FK__Account__country__3C69FB99">
     <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
     <End Role="Account" Type="Self.Account" Multiplicity="*" />
     <ReferentialConstraint>
@@ -87,7 +95,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Account__roleID__286302EC">
+  <Association Name="FK__Account__roleID__3B75D760">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
     <End Role="Account" Type="Self.Account" Multiplicity="*" />
     <ReferentialConstraint>
@@ -99,7 +107,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Comment__aID__398D8EEE">
+  <Association Name="FK__Comment__aID__4CA06362">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -111,7 +119,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Comment__postID__3A81B327">
+  <Association Name="FK__Comment__postID__4D94879B">
     <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
     <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -123,7 +131,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__History__censorI__31EC6D26">
+  <Association Name="FK__History__censorI__44FF419A">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="History" Type="Self.History" Multiplicity="*" />
     <ReferentialConstraint>
@@ -135,7 +143,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__History__posterI__32E0915F">
+  <Association Name="FK__History__posterI__45F365D3">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="History" Type="Self.History" Multiplicity="*" />
     <ReferentialConstraint>
@@ -147,7 +155,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__History__postID__33D4B598">
+  <Association Name="FK__History__postID__46E78A0C">
     <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
     <End Role="History" Type="Self.History" Multiplicity="*" />
     <ReferentialConstraint>
@@ -159,7 +167,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Picture__postID__36B12243">
+  <Association Name="FK__Picture__postID__49C3F6B7">
     <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
     <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
     <ReferentialConstraint>
@@ -171,7 +179,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Post__cateID__2F10007B">
+  <Association Name="FK__Post__cateID__4222D4EF">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
     <End Role="Post" Type="Self.Post" Multiplicity="*" />
     <ReferentialConstraint>
@@ -183,7 +191,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Post__posterID__2E1BDC42">
+  <Association Name="FK__Post__posterID__412EB0B6">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="Post" Type="Self.Post" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,6 +205,7 @@
   </Association>
   <EntityContainer Name="TechNewsModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
@@ -204,43 +213,43 @@
     <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Account__country__29572725" Association="Self.FK__Account__country__29572725">
+    <AssociationSet Name="FK__Account__country__3C69FB99" Association="Self.FK__Account__country__3C69FB99">
       <End Role="Country" EntitySet="Country" />
       <End Role="Account" EntitySet="Account" />
     </AssociationSet>
-    <AssociationSet Name="FK__Account__roleID__286302EC" Association="Self.FK__Account__roleID__286302EC">
+    <AssociationSet Name="FK__Account__roleID__3B75D760" Association="Self.FK__Account__roleID__3B75D760">
       <End Role="Role" EntitySet="Role" />
       <End Role="Account" EntitySet="Account" />
     </AssociationSet>
-    <AssociationSet Name="FK__Comment__aID__398D8EEE" Association="Self.FK__Comment__aID__398D8EEE">
+    <AssociationSet Name="FK__Comment__aID__4CA06362" Association="Self.FK__Comment__aID__4CA06362">
       <End Role="Account" EntitySet="Account" />
       <End Role="Comment" EntitySet="Comment" />
     </AssociationSet>
-    <AssociationSet Name="FK__Comment__postID__3A81B327" Association="Self.FK__Comment__postID__3A81B327">
+    <AssociationSet Name="FK__Comment__postID__4D94879B" Association="Self.FK__Comment__postID__4D94879B">
       <End Role="Post" EntitySet="Post" />
       <End Role="Comment" EntitySet="Comment" />
     </AssociationSet>
-    <AssociationSet Name="FK__History__censorI__31EC6D26" Association="Self.FK__History__censorI__31EC6D26">
+    <AssociationSet Name="FK__History__censorI__44FF419A" Association="Self.FK__History__censorI__44FF419A">
       <End Role="Account" EntitySet="Account" />
       <End Role="History" EntitySet="History" />
     </AssociationSet>
-    <AssociationSet Name="FK__History__posterI__32E0915F" Association="Self.FK__History__posterI__32E0915F">
+    <AssociationSet Name="FK__History__posterI__45F365D3" Association="Self.FK__History__posterI__45F365D3">
       <End Role="Account" EntitySet="Account" />
       <End Role="History" EntitySet="History" />
     </AssociationSet>
-    <AssociationSet Name="FK__History__postID__33D4B598" Association="Self.FK__History__postID__33D4B598">
+    <AssociationSet Name="FK__History__postID__46E78A0C" Association="Self.FK__History__postID__46E78A0C">
       <End Role="Post" EntitySet="Post" />
       <End Role="History" EntitySet="History" />
     </AssociationSet>
-    <AssociationSet Name="FK__Picture__postID__36B12243" Association="Self.FK__Picture__postID__36B12243">
+    <AssociationSet Name="FK__Picture__postID__49C3F6B7" Association="Self.FK__Picture__postID__49C3F6B7">
       <End Role="Post" EntitySet="Post" />
       <End Role="Picture" EntitySet="Picture" />
     </AssociationSet>
-    <AssociationSet Name="FK__Post__cateID__2F10007B" Association="Self.FK__Post__cateID__2F10007B">
+    <AssociationSet Name="FK__Post__cateID__4222D4EF" Association="Self.FK__Post__cateID__4222D4EF">
       <End Role="Category" EntitySet="Category" />
       <End Role="Post" EntitySet="Post" />
     </AssociationSet>
-    <AssociationSet Name="FK__Post__posterID__2E1BDC42" Association="Self.FK__Post__posterID__2E1BDC42">
+    <AssociationSet Name="FK__Post__posterID__412EB0B6" Association="Self.FK__Post__posterID__412EB0B6">
       <End Role="Account" EntitySet="Account" />
       <End Role="Post" EntitySet="Post" />
     </AssociationSet>
