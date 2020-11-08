@@ -57,6 +57,40 @@ namespace TechNews.Controllers {
 
             return RedirectToAction("Index", "Home");
         }
+        public ActionResult Register(string txtUsername, string txtPassword, string txtFullname, string txtEmail, string txtRole) {
+            if (txtUsername == "" || txtUsername == null) {
+                return View("Register");
+            }
+
+            var account = from Account in dbConnection.Accounts
+                          where (Account.aUsername.Equals(txtUsername))
+                          select Account;
+            if (account.Count() != 0) {
+                ViewBag.errorRe = "Username is existed!";
+                return View("Register");
+            }
+            var email = dbConnection.Accounts.Where(info => info.aEmail.Equals(txtEmail));
+
+            if (email.Count() != 0) {
+                ViewBag.errorRe = "Email is existed!";
+                return View("Register");
+            }
+            var acc = new Account();
+            acc.aUsername = txtUsername;
+            acc.aPassword = txtPassword;
+            acc.aFullname = txtFullname;
+            acc.aEmail = txtEmail;
+            acc.aStatus = 0;
+            acc.countryID = 1;
+            acc.roleID = txtRole.Equals("user") ? 2 : 3;
+            acc.aDateAdded = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd"));
+
+            dbConnection.Accounts.Add(acc);
+
+            dbConnection.SaveChanges();
+
+            return RedirectToAction("Login");
+        }
 
     }
 }
