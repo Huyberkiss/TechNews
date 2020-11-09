@@ -196,3 +196,4 @@ C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\De
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmAdvs.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmAdvs.resources
