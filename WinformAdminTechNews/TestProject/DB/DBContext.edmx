@@ -19,6 +19,14 @@
           <Property Name="roleID" Type="int" />
           <Property Name="countryID" Type="int" />
         </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="advID" />
+          </Key>
+          <Property Name="advID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="advImage" Type="varchar" MaxLength="100" />
+          <Property Name="advUrl" Type="varchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="cateID" />
@@ -202,6 +210,7 @@
         </Association>
         <EntityContainer Name="TechNewsModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
@@ -274,6 +283,14 @@
           <NavigationProperty Name="Histories" Relationship="Self.FK__History__censorI__31EC6D26" FromRole="Account" ToRole="History" />
           <NavigationProperty Name="Histories1" Relationship="Self.FK__History__posterI__32E0915F" FromRole="Account" ToRole="History" />
           <NavigationProperty Name="Posts" Relationship="Self.FK__Post__posterID__2E1BDC42" FromRole="Account" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="advID" />
+          </Key>
+          <Property Name="advID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="advImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="advUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -472,6 +489,7 @@
         </Association>
         <EntityContainer Name="TechNewsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Advertisements" EntityType="Self.Advertisement" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Comments" EntityType="Self.Comment" />
           <EntitySet Name="Countries" EntityType="Self.Country" />
@@ -538,6 +556,15 @@
                 <ScalarProperty Name="aDateAdded" ColumnName="aDateAdded" />
                 <ScalarProperty Name="roleID" ColumnName="roleID" />
                 <ScalarProperty Name="countryID" ColumnName="countryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advertisements">
+            <EntityTypeMapping TypeName="TechNewsModel.Advertisement">
+              <MappingFragment StoreEntitySet="Advertisement">
+                <ScalarProperty Name="advID" ColumnName="advID" />
+                <ScalarProperty Name="advImage" ColumnName="advImage" />
+                <ScalarProperty Name="advUrl" ColumnName="advUrl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

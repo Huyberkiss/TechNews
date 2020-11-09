@@ -16,6 +16,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Advertisements">
+      <EntityTypeMapping TypeName="TechNewsModel.Advertisement">
+        <MappingFragment StoreEntitySet="Advertisement">
+          <ScalarProperty Name="advID" ColumnName="advID" />
+          <ScalarProperty Name="advImage" ColumnName="advImage" />
+          <ScalarProperty Name="advUrl" ColumnName="advUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="TechNewsModel.Category">
         <MappingFragment StoreEntitySet="Category">

@@ -26,6 +26,7 @@ namespace TestProject.DB
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Advertisement> Advertisements { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Country> Countries { get; set; }

@@ -4,8 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d9a88ac2213f4bd9b2672e415b3910e3" Name="Diagram1">
+      <Diagram DiagramId="342a703228a54e7ab895d8a6b3218189" Name="Diagram1">
         <EntityTypeShape EntityType="TechNewsModel.Account" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Advertisement" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Category" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Comment" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Country" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />

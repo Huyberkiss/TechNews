@@ -77,6 +77,9 @@
     <Compile Include="DB\Account.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Advertisement.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Category.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
@@ -112,6 +115,12 @@
     </Compile>
     <Compile Include="DB\Role.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdvs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdvs.Designer.cs">
+      <DependentUpon>frmAdvs.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInsertUser.cs">
       <SubType>Form</SubType>
@@ -151,6 +160,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmAdvs.resx">
+      <DependentUpon>frmAdvs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInsertUser.resx">
       <DependentUpon>frmInsertUser.cs</DependentUpon>
     </EmbeddedResource>
