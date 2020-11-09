@@ -136,6 +136,9 @@
     <Compile Include="DB\Account.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Advertisement.cs">
+      <DependentUpon>DBConnection.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Category.cs">
       <DependentUpon>DBConnection.tt</DependentUpon>
     </Compile>
