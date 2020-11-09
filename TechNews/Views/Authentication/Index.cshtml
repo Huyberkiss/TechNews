@@ -4,7 +4,17 @@
         background-color: var(--dark);
     }
 </style>
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="559443797881-3h3h7b9hnls91oeoft4gei5vh9ng3odl.apps.googleusercontent.com">
+<script type="text/javascript">
+            function onSignIn(googleUser) {
+                gapi.auth2.getAuthInstance().disconnect();
+                location.reload();
+                var profile = googleUser.getBasicProfile();
+                var email = profile.getEmail();
+                window.location = "UserController?mail=" + email;
+            }
+</script>
 <div class="bg-purple">
 
     <div class="container">
@@ -12,7 +22,6 @@
             <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 mx-auto">
-
                         <!-- form card login -->
                         <div class="card rounded shadow shadow-sm">
                             <div class="card-header">
@@ -20,6 +29,8 @@
                             </div>
                             <div class="card-body">
                                 <form class="form" action="/Authentication/Login" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+                                    <h3>Log in with a social network:</h3>
+                                    <center><a class="g-signin2" data-onsuccess="onSignIn" center></a></center>
                                     <div class="form-group">
                                         <label for="uname1">Username</label>
                                         <input type="text" class="form-control form-control-lg rounded-0" name="user" id="uname1" required="">
@@ -39,7 +50,7 @@
                                                 <div class="p text-danger">@ViewBag.error  asasdsa</div>
                                             }
                                         </label>
-                                      
+
 
 
                                     </div>

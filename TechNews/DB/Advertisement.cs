@@ -7,14 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TechNews
+namespace TechNews.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Country
+    public partial class Advertisement
     {
-        public int countryID { get; set; }
-        public string countryName { get; set; }
+        public int advID { get; set; }
+        public string advImage { get; set; }
+        public string advUrl { get; set; }
     }
 }

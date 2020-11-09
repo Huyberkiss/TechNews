@@ -13,6 +13,18 @@
           <ScalarProperty Name="aDateAdded" ColumnName="aDateAdded" />
           <ScalarProperty Name="roleID" ColumnName="roleID" />
           <ScalarProperty Name="countryID" ColumnName="countryID" />
+<<<<<<< HEAD
+=======
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisements">
+      <EntityTypeMapping TypeName="TechNewsModel.Advertisement">
+        <MappingFragment StoreEntitySet="Advertisement">
+          <ScalarProperty Name="advID" ColumnName="advID" />
+          <ScalarProperty Name="advImage" ColumnName="advImage" />
+          <ScalarProperty Name="advUrl" ColumnName="advUrl" />
+>>>>>>> 42aeb34164d04dab9aa41400f1f40f6555dd26af
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
