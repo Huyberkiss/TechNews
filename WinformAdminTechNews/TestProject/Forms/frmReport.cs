@@ -1,4 +1,4 @@
-﻿using DevExpress.XtraEditors.Filtering.Templates;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -709,6 +709,8 @@ namespace TestProject.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            Form_Dashboard dashboard = new Form_Dashboard();
+            dashboard.Show();
             this.Dispose();
         }
     }

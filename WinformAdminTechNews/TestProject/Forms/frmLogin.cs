@@ -55,6 +55,7 @@ namespace TestProject
                     fd.Show();
                     txtUsername.Text = "";
                     txtPassword.Text = "";
+                    this.Hide();
                 }
                 else
                 {
@@ -68,7 +69,7 @@ namespace TestProject
                 txtPassword.Text = "";
             }
 
-            this.Hide();
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)

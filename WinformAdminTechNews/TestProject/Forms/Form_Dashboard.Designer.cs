@@ -37,7 +37,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAccountManagement = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdvertising = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -163,23 +163,24 @@
             this.btnAccountManagement.UseVisualStyleBackColor = false;
             this.btnAccountManagement.Click += new System.EventHandler(this.btnAccountManagement_Click);
             // 
-            // button3
+            // btnAdvertising
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(517, 382);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(264, 106);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Advertising Management";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAdvertising.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdvertising.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
+            this.btnAdvertising.FlatAppearance.BorderSize = 0;
+            this.btnAdvertising.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdvertising.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdvertising.ForeColor = System.Drawing.Color.Black;
+            this.btnAdvertising.Image = ((System.Drawing.Image)(resources.GetObject("btnAdvertising.Image")));
+            this.btnAdvertising.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdvertising.Location = new System.Drawing.Point(517, 382);
+            this.btnAdvertising.Name = "btnAdvertising";
+            this.btnAdvertising.Size = new System.Drawing.Size(264, 106);
+            this.btnAdvertising.TabIndex = 1;
+            this.btnAdvertising.Text = "Advertising Management";
+            this.btnAdvertising.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdvertising.UseVisualStyleBackColor = false;
+            this.btnAdvertising.Click += new System.EventHandler(this.btnAdvertising_Click);
             // 
             // label4
             // 
@@ -264,7 +265,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAdvertising);
             this.Controls.Add(this.btnAccountManagement);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -289,7 +290,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdvertising;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

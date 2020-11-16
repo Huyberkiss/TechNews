@@ -45,5 +45,12 @@ namespace TestProject.Forms
             frmRe.Show();
             Hide();
         }
+
+        private void btnAdvertising_Click(object sender, EventArgs e)
+        {
+            frmAdvs ads = new frmAdvs();
+            ads.Show();
+            Hide();
+        }
     }
 }
