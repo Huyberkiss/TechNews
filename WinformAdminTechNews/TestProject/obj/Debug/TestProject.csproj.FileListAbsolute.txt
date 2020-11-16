@@ -70,6 +70,7 @@ D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master
 D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master\TestProject\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
 D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master\TestProject\obj\Debug\TestProject.exe.licenses
 D:\Subjects\C#.NET\New folder\csharpui.comLoginFormForPOS (1)\TestProject-master\TestProject\obj\Debug\TestProject.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe.config
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.pdb
@@ -138,3 +139,58 @@ D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdmin
 D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CopyComplete
 D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe
 D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.pdb
+=======
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe.config
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.pdb
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.v20.1.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Printing.v20.1.Core.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Utils.v20.1.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraEditors.v20.1.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.v20.1.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Printing.v20.1.Core.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Utils.v20.1.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraEditors.v20.1.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csprojAssemblyReference.cache
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.frmLogin.resources
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.Form_Dashboard.resources
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.GenerateResource.cache
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe.licenses
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CopyComplete
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe
+D:\C#\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.pdb
+>>>>>>> master

@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TechNewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="aID" />
+          </Key>
+          <Property Name="aID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aUsername" Type="varchar" MaxLength="50" />
+          <Property Name="aPassword" Type="varchar" MaxLength="32" />
+          <Property Name="aFullname" Type="varchar" MaxLength="100" />
+          <Property Name="aEmail" Type="varchar" MaxLength="100" />
+          <Property Name="aStatus" Type="int" />
+          <Property Name="aDateAdded" Type="date" />
+          <Property Name="roleID" Type="int" />
+          <Property Name="countryID" Type="int" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="advID" />
+          </Key>
+          <Property Name="advID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="advImage" Type="varchar" MaxLength="100" />
+          <Property Name="advUrl" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="cateID" />
+          </Key>
+          <Property Name="cateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cateName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="commentID" />
+          </Key>
+          <Property Name="commentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="commentContent" Type="text" />
+          <Property Name="aID" Type="int" />
+          <Property Name="postID" Type="int" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="countryID" />
+          </Key>
+          <Property Name="countryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="countryName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="hID" />
+          </Key>
+          <Property Name="hID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateSubmited" Type="date" />
+          <Property Name="dateAccepted" Type="date" />
+          <Property Name="typeAccept" Type="int" />
+          <Property Name="censorID" Type="int" />
+          <Property Name="posterID" Type="int" />
+          <Property Name="postID" Type="int" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="picID" />
+          </Key>
+          <Property Name="picID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="picURL" Type="varchar" MaxLength="100" />
+          <Property Name="postID" Type="int" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="posterID" Type="int" />
+          <Property Name="postTitle" Type="varchar" MaxLength="255" />
+          <Property Name="postContent" Type="text" />
+          <Property Name="postStatus" Type="int" />
+          <Property Name="cateID" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="roleID" />
+          </Key>
+          <Property Name="roleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roleName" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__Account__country__29572725">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="countryID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="countryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__roleID__286302EC">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="roleID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comment__aID__398D8EEE">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comment__postID__3A81B327">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="postID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="postID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__History__censorI__31EC6D26">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="censorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__History__posterI__32E0915F">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="posterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__History__postID__33D4B598">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="postID" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="postID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Picture__postID__36B12243">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="postID" />
+            </Principal>
+            <Dependent Role="Picture">
+              <PropertyRef Name="postID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Post__cateID__2F10007B">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="cateID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="cateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Post__posterID__2E1BDC42">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="posterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TechNewsModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Account__country__29572725" Association="Self.FK__Account__country__29572725">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__roleID__286302EC" Association="Self.FK__Account__roleID__286302EC">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comment__aID__398D8EEE" Association="Self.FK__Comment__aID__398D8EEE">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comment__postID__3A81B327" Association="Self.FK__Comment__postID__3A81B327">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__History__censorI__31EC6D26" Association="Self.FK__History__censorI__31EC6D26">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
+          <AssociationSet Name="FK__History__posterI__32E0915F" Association="Self.FK__History__posterI__32E0915F">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
+          <AssociationSet Name="FK__History__postID__33D4B598" Association="Self.FK__History__postID__33D4B598">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Picture__postID__36B12243" Association="Self.FK__Picture__postID__36B12243">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="Picture" EntitySet="Picture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Post__cateID__2F10007B" Association="Self.FK__Post__cateID__2F10007B">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Post" EntitySet="Post" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Post__posterID__2E1BDC42" Association="Self.FK__Post__posterID__2E1BDC42">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Post" EntitySet="Post" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TechNewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="aID" />
+          </Key>
+          <Property Name="aID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="aFullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aStatus" Type="Int32" />
+          <Property Name="aDateAdded" Type="DateTime" Precision="0" />
+          <Property Name="roleID" Type="Int32" />
+          <Property Name="countryID" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__Account__country__29572725" FromRole="Account" ToRole="Country" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__Account__roleID__286302EC" FromRole="Account" ToRole="Role" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK__Comment__aID__398D8EEE" FromRole="Account" ToRole="Comment" />
+          <NavigationProperty Name="Histories" Relationship="Self.FK__History__censorI__31EC6D26" FromRole="Account" ToRole="History" />
+          <NavigationProperty Name="Histories1" Relationship="Self.FK__History__posterI__32E0915F" FromRole="Account" ToRole="History" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK__Post__posterID__2E1BDC42" FromRole="Account" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="advID" />
+          </Key>
+          <Property Name="advID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="advImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="advUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="cateID" />
+          </Key>
+          <Property Name="cateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK__Post__cateID__2F10007B" FromRole="Category" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="commentID" />
+          </Key>
+          <Property Name="commentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="commentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="aID" Type="Int32" />
+          <Property Name="postID" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Comment__aID__398D8EEE" FromRole="Comment" ToRole="Account" />
+          <NavigationProperty Name="Post" Relationship="Self.FK__Comment__postID__3A81B327" FromRole="Comment" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="countryID" />
+          </Key>
+          <Property Name="countryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="countryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__country__29572725" FromRole="Country" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="hID" />
+          </Key>
+          <Property Name="hID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateSubmited" Type="DateTime" Precision="0" />
+          <Property Name="dateAccepted" Type="DateTime" Precision="0" />
+          <Property Name="typeAccept" Type="Int32" />
+          <Property Name="censorID" Type="Int32" />
+          <Property Name="posterID" Type="Int32" />
+          <Property Name="postID" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__History__censorI__31EC6D26" FromRole="History" ToRole="Account" />
+          <NavigationProperty Name="Account1" Relationship="Self.FK__History__posterI__32E0915F" FromRole="History" ToRole="Account" />
+          <NavigationProperty Name="Post" Relationship="Self.FK__History__postID__33D4B598" FromRole="History" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="picID" />
+          </Key>
+          <Property Name="picID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="picURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="postID" Type="Int32" />
+          <NavigationProperty Name="Post" Relationship="Self.FK__Picture__postID__36B12243" FromRole="Picture" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="posterID" Type="Int32" />
+          <Property Name="postTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="postContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="postStatus" Type="Int32" />
+          <Property Name="cateID" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Post__posterID__2E1BDC42" FromRole="Post" ToRole="Account" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Post__cateID__2F10007B" FromRole="Post" ToRole="Category" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK__Comment__postID__3A81B327" FromRole="Post" ToRole="Comment" />
+          <NavigationProperty Name="Histories" Relationship="Self.FK__History__postID__33D4B598" FromRole="Post" ToRole="History" />
+          <NavigationProperty Name="Pictures" Relationship="Self.FK__Picture__postID__36B12243" FromRole="Post" ToRole="Picture" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="roleID" />
+          </Key>
+          <Property Name="roleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__roleID__286302EC" FromRole="Role" ToRole="Account" />
+        </EntityType>
+        <Association Name="FK__Account__country__29572725">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="countryID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="countryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__roleID__286302EC">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="roleID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comment__aID__398D8EEE">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__History__censorI__31EC6D26">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="censorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__History__posterI__32E0915F">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="posterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Post__posterID__2E1BDC42">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="aID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="posterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Post__cateID__2F10007B">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="cateID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="cateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comment__postID__3A81B327">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="postID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="postID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__History__postID__33D4B598">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="postID" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="postID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Picture__postID__36B12243">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="postID" />
+            </Principal>
+            <Dependent Role="Picture">
+              <PropertyRef Name="postID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TechNewsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Advertisements" EntityType="Self.Advertisement" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Histories" EntityType="Self.History" />
+          <EntitySet Name="Pictures" EntityType="Self.Picture" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <AssociationSet Name="FK__Account__country__29572725" Association="Self.FK__Account__country__29572725">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__roleID__286302EC" Association="Self.FK__Account__roleID__286302EC">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comment__aID__398D8EEE" Association="Self.FK__Comment__aID__398D8EEE">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__History__censorI__31EC6D26" Association="Self.FK__History__censorI__31EC6D26">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="History" EntitySet="Histories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__History__posterI__32E0915F" Association="Self.FK__History__posterI__32E0915F">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="History" EntitySet="Histories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Post__posterID__2E1BDC42" Association="Self.FK__Post__posterID__2E1BDC42">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Post__cateID__2F10007B" Association="Self.FK__Post__cateID__2F10007B">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comment__postID__3A81B327" Association="Self.FK__Comment__postID__3A81B327">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__History__postID__33D4B598" Association="Self.FK__History__postID__33D4B598">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="History" EntitySet="Histories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Picture__postID__36B12243" Association="Self.FK__Picture__postID__36B12243">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="Picture" EntitySet="Pictures" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TechNewsModelStoreContainer" CdmEntityContainer="TechNewsEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="TechNewsModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="aID" ColumnName="aID" />
+                <ScalarProperty Name="aUsername" ColumnName="aUsername" />
+                <ScalarProperty Name="aPassword" ColumnName="aPassword" />
+                <ScalarProperty Name="aFullname" ColumnName="aFullname" />
+                <ScalarProperty Name="aEmail" ColumnName="aEmail" />
+                <ScalarProperty Name="aStatus" ColumnName="aStatus" />
+                <ScalarProperty Name="aDateAdded" ColumnName="aDateAdded" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advertisements">
+            <EntityTypeMapping TypeName="TechNewsModel.Advertisement">
+              <MappingFragment StoreEntitySet="Advertisement">
+                <ScalarProperty Name="advID" ColumnName="advID" />
+                <ScalarProperty Name="advImage" ColumnName="advImage" />
+                <ScalarProperty Name="advUrl" ColumnName="advUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="TechNewsModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="cateID" ColumnName="cateID" />
+                <ScalarProperty Name="cateName" ColumnName="cateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="TechNewsModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="commentID" ColumnName="commentID" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+                <ScalarProperty Name="aID" ColumnName="aID" />
+                <ScalarProperty Name="postID" ColumnName="postID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="TechNewsModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+                <ScalarProperty Name="countryName" ColumnName="countryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Histories">
+            <EntityTypeMapping TypeName="TechNewsModel.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="hID" ColumnName="hID" />
+                <ScalarProperty Name="dateSubmited" ColumnName="dateSubmited" />
+                <ScalarProperty Name="dateAccepted" ColumnName="dateAccepted" />
+                <ScalarProperty Name="typeAccept" ColumnName="typeAccept" />
+                <ScalarProperty Name="censorID" ColumnName="censorID" />
+                <ScalarProperty Name="posterID" ColumnName="posterID" />
+                <ScalarProperty Name="postID" ColumnName="postID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="TechNewsModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="picID" ColumnName="picID" />
+                <ScalarProperty Name="picURL" ColumnName="picURL" />
+                <ScalarProperty Name="postID" ColumnName="postID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="TechNewsModel.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="postID" ColumnName="postID" />
+                <ScalarProperty Name="posterID" ColumnName="posterID" />
+                <ScalarProperty Name="postTitle" ColumnName="postTitle" />
+                <ScalarProperty Name="postContent" ColumnName="postContent" />
+                <ScalarProperty Name="postStatus" ColumnName="postStatus" />
+                <ScalarProperty Name="cateID" ColumnName="cateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TechNewsModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

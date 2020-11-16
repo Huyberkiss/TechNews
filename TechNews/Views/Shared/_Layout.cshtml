@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/Content/Site.css" />
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <style>
@@ -21,11 +22,9 @@
             color: #fff !important;
         }
 
-        .footer {
-            background-color: #080861;
-            padding: 100px 0px;
+        footer {
+            background-color: #000;
         }
-
     </style>
 </head>
 <body>
@@ -36,14 +35,32 @@
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="/Home/About" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="/Home/" class="nav-link">All News</a></li>
+                    <li class="nav-item"><a href="/News/" class="nav-link">All News</a></li>
                     <li class="nav-item"><a href="/Home/Contact" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="/Home/" class="nav-link">Advertise</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right ml-auto p-1">
-                    <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
-                    <li class="nav-item"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
+                    @if (Session["user_id"] == null) {
+                        <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
+                        <li class="nav-item"><a href="/Authentication" id="loginLink" class="nav-link">Log in</a></li>
+                    }
+                    else {
+                        <li class="nav-item mr-2">
+                            @{
+                                int id = Convert.ToInt32(Session["user_id"]);
+                                var user = new TechNews.DB.TechNewsEntities().Accounts.First(info => info.aID == id);
+                            }
+                            <div class="d-flex">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-user-circle fab-4px"></i>
+                                </a>
+                                <p class="mt-2 mr-3 ml-2 text-light">Hello, @user.aFullname</p>
+                                <a class="mt-2 text-light " href="/Authentication/LogOut">Logout</a>
+                            </div>
+                        </li>
+
+                    }
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="fab fa-facebook-f"></i>
@@ -64,24 +81,22 @@
             </div>
         </div>
     </nav>
-        @RenderBody()
-        <footer class="footer ">
-           <div class="container-fluid">
-              <div class="d-flex justify-content-lg-around text-light">
-                 <div>
-                     <div class="h2"> Subcribe hehe</div> 
-                 </div>
-                 <div>
-                     <h5>Home</h5><br />
-                     <h5>About</h5><br />
-                     <h5>All News</h5><br />
-                     <h5>Contact</h5><br />
-                     <h5>Advertise</h5><br />
-                 </div>
-              </div>
-           </div>
-        </footer>
-   
+    @RenderBody()
+    <!-- Footer -->
+
+    <footer class="page-footer font-small ">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-light">
+            © 2020 Copyright:
+            <a href="https://mdbootstrap.com/" class="text-light"> Berkiss.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+    <!-- Footer -->
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

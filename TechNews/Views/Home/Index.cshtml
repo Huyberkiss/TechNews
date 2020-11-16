@@ -5,41 +5,13 @@
         background-color: #000;
     }
 
-    .container-title {
-        background-color: #000;
+
+
+    .small-title {
+        width: 60px;
+        padding: 7px;
     }
 
-    .title {
-        color: #93bdc9;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 141px;
-    }
-
-    .small-text {
-        color: #93bdc9;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 25px;
-        padding-top: 55px;
-    }
-
-    .hr {
-        background-color: #fff;
-        width: 3px;
-        height: 80px;
-    }
-
-    video {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-    }
-    
-    .section:nth-child(odd) {
-        background-color: #eef;
-    }
-    .section:nth-child(even) {
-        background-color: #fff;
-    }
 
     .section-title {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -50,79 +22,106 @@
         font-size: 14px;
     }
 
-    .main{
-        width:88%;
+    .main {
+        width: 88%;
     }
+
+
+
+    .section:nth-child(odd) {
+      background-color: rgba(242,242,242,1);
+    }
+
+    .section:nth-child(even) {
+        background-color: #fff;
+    }
+
+
 
     .comment {
         font-size: 12px;
     }
+
+    
 </style>
 
 
 @Html.Partial("~/Views/Shared/SubViews/_HomeIntro.cshtml")
 
+@{
+    IEnumerable<TechNews.ViewModel.HomeViewModel> listPost = ViewBag.posts as IEnumerable<TechNews.ViewModel.HomeViewModel>;
+    IEnumerable<TechNews.DB.Category> listCate = ViewBag.category as IEnumerable<TechNews.DB.Category>;
+    int count = 0;
+}
 <div class="container-fluid main">
-    <div class="section p-5 m-5">
-        <div class="section-title mb-5">
-            <h5>C# .NET</h5>
-        </div>
-        <div class="row">
-            <div class="col-4">
+    @foreach (var cate in listCate) {
+        count = 0;
+        <div class="section p-5 m-5">
+            <div class="section-title mb-5">
+                <h5>@cate.cateName</h5>
+            </div>
+            <div class="row">
+                @foreach (var post in listPost) {
+                    if (post.CateId != cate.cateID) {
+                        continue;
+                    }
+
+                    if(count == 3) {
+                        break;
+                    }
+
+                    if (count != 1) {
+                        <div class="col-4">
+                            <div class="d-flex justify-content-between">
+                                <div class="title">
+                                    <div class="h6"><a href="#">@post.Title</a></div>
+                                </div>
+                                <div class="author-info">
+                                    <small>@post.PosterName</small>
+                                    <br />
+                                    <small>@string.Format("{0:dd/MM/yyyy}", post.PostedDay)</small>
+                                </div>
+                            </div>
+                            <div class="paragraph text-left pb-2 my-5">
+                                @post.Content.Substring(0, 100) ...
+                            </div>
+
+                            <hr />
+                            <div class="d-flex justify-content-between reaction">
+                                <div class="comment">
+                                    <div class="p">Write a comment</div>
+                                </div>
+                                <div class="react">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else {
+                        <div class="col-4">
+                            <div class="d-flex justify-content-center">
+                                <img src="@post.mainPic" width="80%" height="80%">
+
+                            </div>
+                            <div class="title d-flex justify-content-center my-4">
+                                <div class="h6"><a href="#">@post.Title</a></div>
+                            </div>
+
+                            <hr/>
+                            <div class="d-flex justify-content-between reaction">
+                                <div class="comment">
+                                    <div class="p">Write a comment</div>
+                                </div>
+                                <div class="react">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    count++;
+                }
 
             </div>
-            <div class="col-4">
-                <div class="title">
-                    <div class="h6">ABCDEZ</div>
-                </div>
-                <div class="paragraph text-left pb-4">
-                    Create a blog post subtitle that summarizes your post in a few short,
-                    punchy sentences and entices your audience to continue reading. Wel...
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                    <div class="comment">
-                        <div class="p">Write a comment</div>
-                    </div>
-                    <div class="react">
-                        <i class="far fa-heart"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-
-            </div>
         </div>
-    </div>
-    <div class="bg-transparent section p-5 m-5">
-        <div class="section-title mb-5">
-            <h5>C# .NET</h5>
-        </div>
-        <div class="row">
-            <div class="col-4">
-
-            </div>
-            <div class="col-4">
-                <div class="title">
-                    <div class="h6">ABCDEZ</div>
-                </div>
-                <div class="paragraph text-left pb-4">
-                    Create a blog post subtitle that summarizes your post in a few short,
-                    punchy sentences and entices your audience to continue reading. Wel...
-                </div>
-                <hr />
-                <div class="d-flex justify-content-between">
-                    <div class="comment">
-                        <div class="p">Write a comment</div>
-                    </div>
-                    <div class="react">
-                        <i class="far fa-heart"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-
-            </div>
-        </div>
-    </div>
+    }
 </div>
