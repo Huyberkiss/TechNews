@@ -17,7 +17,7 @@ namespace TestProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdvs());
+            Application.Run(new Form_Dashboard());
         }
     }
 }

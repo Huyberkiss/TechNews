@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="342a703228a54e7ab895d8a6b3218189" Name="Diagram1">
         <EntityTypeShape EntityType="TechNewsModel.Account" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechNewsModel.Advertisement" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechNewsModel.Advertisement" Width="1.5" PointX="5.875" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Category" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Comment" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TechNewsModel.Country" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />

@@ -136,13 +136,14 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(217, 209);
+            this.button1.Location = new System.Drawing.Point(220, 209);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(294, 97);
+            this.button1.Size = new System.Drawing.Size(291, 97);
             this.button1.TabIndex = 1;
             this.button1.Text = "Post Management";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAccountManagement
             // 
@@ -233,6 +234,7 @@
             this.button7.Text = "\r\nReports";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 

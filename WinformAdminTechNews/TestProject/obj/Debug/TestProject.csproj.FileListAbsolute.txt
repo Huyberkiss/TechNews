@@ -109,91 +109,32 @@ D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\De
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\EntityFramework.SqlServer.xml
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CopyComplete
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Images.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Printing.v20.1.Core.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Utils.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraBars.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraEditors.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraGrid.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraLayout.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.RichEdit.v20.1.Core.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Office.v20.1.Core.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Data.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Printing.v20.1.Core.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Utils.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraBars.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraEditors.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraGrid.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraLayout.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraPrinting.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.RichEdit.v20.1.Core.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.XtraTreeList.v20.1.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\DevExpress.Office.v20.1.Core.xml
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraBars.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraBars.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraBars.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraBars.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraGrid.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraGrid.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraGrid.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraGrid.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraLayout.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraLayout.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraLayout.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraLayout.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\de\DevExpress.Office.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
-D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmPostManagement.resources
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources
 C:\Users\Admin\Documents\GitHub\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmAdvs.resources
 D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmAdvs.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmReport.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe.config
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.exe
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\TestProject.pdb
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\EntityFramework.dll
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\EntityFramework.SqlServer.dll
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\EntityFramework.xml
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\bin\Debug\EntityFramework.SqlServer.xml
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csprojAssemblyReference.cache
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmReport.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmAdvs.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmInsertUser.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.frmLogin.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.Form_Dashboard.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmUserManagement.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmPostManagement.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Forms.frmViewDetailss.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.GenerateResource.cache
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe.licenses
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.csproj.CopyComplete
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.exe
+D:\Subjects\C#.NET\GITHUBPRJECT\Bản đã thêm frmReport\TechNews\WinformAdminTechNews\TestProject\obj\Debug\TestProject.pdb

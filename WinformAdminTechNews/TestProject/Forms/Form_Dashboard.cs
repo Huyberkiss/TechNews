@@ -31,5 +31,19 @@ namespace TestProject.Forms
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmPostManagement frmPost = new frmPostManagement();
+            frmPost.Show();
+            Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmReport frmRe = new frmReport();
+            frmRe.Show();
+            Hide();
+        }
     }
 }
