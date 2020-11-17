@@ -42,6 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnExportDetail = new System.Windows.Forms.Button();
+            this.btnExportData = new System.Windows.Forms.Button();
             this.btnSort = new System.Windows.Forms.Button();
             this.cbbList = new System.Windows.Forms.ComboBox();
             this.btnSearchName = new System.Windows.Forms.Button();
@@ -65,7 +67,7 @@
             // 
             // dgvData
             // 
-            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Location = new System.Drawing.Point(5, 22);
             this.dgvData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -87,7 +89,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(897, 543);
+            this.groupBox1.Size = new System.Drawing.Size(897, 600);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Form";
@@ -100,21 +102,21 @@
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox7.Size = new System.Drawing.Size(885, 194);
+            this.groupBox7.Size = new System.Drawing.Size(885, 253);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Detail";
             // 
             // dgvDetail
             // 
-            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetail.Location = new System.Drawing.Point(7, 27);
             this.dgvDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.RowHeadersWidth = 51;
             this.dgvDetail.RowTemplate.Height = 24;
-            this.dgvDetail.Size = new System.Drawing.Size(872, 161);
+            this.dgvDetail.Size = new System.Drawing.Size(872, 222);
             this.dgvDetail.TabIndex = 0;
             // 
             // grbTable
@@ -222,6 +224,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(189)))), ((int)(((byte)(201)))));
+            this.groupBox3.Controls.Add(this.btnExportDetail);
+            this.groupBox3.Controls.Add(this.btnExportData);
             this.groupBox3.Controls.Add(this.btnSort);
             this.groupBox3.Controls.Add(this.cbbList);
             this.groupBox3.Controls.Add(this.btnSearchName);
@@ -234,10 +238,32 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(413, 274);
+            this.groupBox3.Size = new System.Drawing.Size(413, 331);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Report";
+            // 
+            // btnExportDetail
+            // 
+            this.btnExportDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportDetail.Location = new System.Drawing.Point(214, 271);
+            this.btnExportDetail.Name = "btnExportDetail";
+            this.btnExportDetail.Size = new System.Drawing.Size(182, 41);
+            this.btnExportDetail.TabIndex = 9;
+            this.btnExportDetail.Text = "Export Detail";
+            this.btnExportDetail.UseVisualStyleBackColor = true;
+            this.btnExportDetail.Click += new System.EventHandler(this.btnExportDetail_Click);
+            // 
+            // btnExportData
+            // 
+            this.btnExportData.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportData.Location = new System.Drawing.Point(21, 271);
+            this.btnExportData.Name = "btnExportData";
+            this.btnExportData.Size = new System.Drawing.Size(182, 41);
+            this.btnExportData.TabIndex = 8;
+            this.btnExportData.Text = "Export Data";
+            this.btnExportData.UseVisualStyleBackColor = true;
+            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
             // 
             // btnSort
             // 
@@ -352,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1337, 567);
+            this.ClientSize = new System.Drawing.Size(1337, 623);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
@@ -401,5 +427,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.GroupBox grbTable;
+        private System.Windows.Forms.Button btnExportData;
+        private System.Windows.Forms.Button btnExportDetail;
     }
 }
