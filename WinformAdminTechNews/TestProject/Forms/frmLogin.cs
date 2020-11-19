@@ -45,7 +45,7 @@ namespace TestProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var passMD5 = new Encryptor().EncryptMD5(txtPassword.Text);
-            Account acc = db.Accounts.FirstOrDefault(a => a.aUsername.Equals(txtUsername.Text) && a.aPassword.Equals(passMD5));
+            Account acc = db.Accounts.FirstOrDefault(a => a.aUsername.Equals(txtUsername.Text) && a.aPassword.Equals(passMD5) && a.aStatus == 0);
             if (acc != null )
             {
                
